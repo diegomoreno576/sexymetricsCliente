@@ -16,7 +16,6 @@ export default function useUser () {
 
     loginService({user:{ email, password }})
         .then(data => {
-            console.log(data)
             dispatch(setCurrentuser(data.user.data));
             window.sessionStorage.setItem('jwt', data.token)
             window.sessionStorage.setItem('blog', JSON.stringify(data.blog) )
