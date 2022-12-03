@@ -1,0 +1,13 @@
+@import "./../ThemeColor.css";
+
+.mainApp {
+    background-color: var(--App-color);
+    color: var(--Text-color);
+}
+.Subtitle {
+    padding: 2em;
+    text-align: center;
+}
+.mainContainer {
+    padding: 0 !important;
+}

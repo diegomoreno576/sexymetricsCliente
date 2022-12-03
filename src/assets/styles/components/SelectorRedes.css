@@ -1,0 +1,101 @@
+@import "./../ThemeColor.css";
+
+.Redesdropdown-content {
+    background-color: var(--button-color);
+    left: 0px;
+    border-radius: 20px;
+    z-index: 99;
+    height: 360px;
+    position: absolute;
+    overflow: auto;
+    width: 92%;
+    margin-top: 28px;
+    margin-left: 5%;
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+}
+.Redesdropdown-btn:hover {
+       background-color: rgb(14,48,168);
+    transition-duration: 300ms;
+}
+.Redesdropdown-content::-webkit-scrollbar{
+    width: 7px;
+  
+}
+/* Track */
+.Redesdropdown-content::-webkit-scrollbar-track {
+    border-radius: 20px;
+  }
+   
+  /* Handle */
+  .Redesdropdown-content::-webkit-scrollbar-thumb {
+    background: rgb(14,48,168); 
+    border-radius: 10px;
+   
+  }
+  
+  /* Handle on hover */
+  .Redesdropdown-content::-webkit-scrollbar-thumb:hover {
+    background: rgb(14,48,168); 
+  }
+.RedesTextButton{
+    color: var(--Text-color);
+    font-size: 17px;
+    margin-left: 1em;
+}
+.Redesdropdown-btn:hover .RedesTextButton{
+    color: white;
+  
+}
+.Redesdropdown-contentChild {
+    margin: 0.5em;
+} 
+
+.Redesdropdown-btn-close {
+    text-align: center;
+    padding-top: 1em;
+}
+img.RedesIcono-close {
+    width: 38px;
+    height: 38px;
+}
+.RedesIcono {
+    width: 30px;
+    height: 30px;
+}
+.Redesdropdown {
+    padding: 1.3em;
+}
+a.RedesLink:hover {
+    background-color:  var(--button-color-hover);
+    transition-duration: 300ms;
+}
+.Redesdropdown-btn {
+    background-color: var(--button-color);
+    padding: 1em;
+    cursor: pointer;
+    border-radius: 100em;
+    padding: 1em 2.5em;
+}
+a.RedesLink {
+    padding: 1em;
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 22px;
+    color: var(--Text-color);
+    gap: 10px;
+    border-radius: 100em;
+}
+.RedesText {
+    font-size: 17px;
+    margin-left: 1em;
+    color: var(--Text-color);
+}
+.IconoCaret{
+    float: right;
+}
+.active{
+    display: none !important;
+}
+.MainRedes {
+    margin: 0.5em;
+}

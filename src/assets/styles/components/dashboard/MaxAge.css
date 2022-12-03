@@ -1,0 +1,19 @@
+@import "./../../ThemeColor.css";
+
+.EdadBtnDashboard {
+    color: var(--Text-color);
+    background-color: var(--BlackAndGray);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+.maxEdad {
+    margin-left: 0px;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: "Work Sans",sans-serif;
+}

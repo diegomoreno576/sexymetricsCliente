@@ -1,0 +1,218 @@
+
+@import "./ThemeColor.css";
+
+body {
+  background-color: var(--App-color);
+  overflow-x: hidden;
+  color: var(--Text-color);
+}
+#renderRange {
+  text-transform: capitalize;
+}
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-detail-item-separate {
+  margin-top: 0px;
+}
+.ancle_dropdown {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 9999;
+}
+.descripcion-container {
+  padding: 7em 4em 0em 4em;
+  position: relative;
+}
+#seccions_botons{
+  padding: 1em;
+  border-radius: 100em;
+  border: 0;
+  background-color: rgb(14,48,168);
+}
+#seccions_botons:hover, #seccions_botons:focus{
+  color: #ffffff96;
+  box-shadow: none;
+}
+
+.dropdown-menu.show {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 0.5em !important;
+  border: 0 !important;
+  padding: 0.5em;
+}
+.main_page_banner {
+  border-radius: 20px;
+  margin-top: 2em;
+}
+a.dropdown-item.SectionsAncles {
+  padding: 1em 1em;
+  border-radius: 100em;
+  margin-bottom: 0.5em;
+}
+.SeccionTitle {
+  padding: 3em 2em;
+}
+main {
+  padding: 20px 10px;
+}
+
+.bannerPrincipal{
+  background-repeat: no-repeat;
+  transition: background 1s;
+-webkit-transition: background 1s;
+-moz-transition: background 1s;
+-o-transition: background 1s;
+}
+
+.colorActive{
+  background-color: #3a313a;
+  background-image: url("../img/Banner.png");
+  transition: background 1s;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  -o-transition: background 1s;
+}
+a {
+  text-decoration: none;
+}
+a:active, a:focus, a:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 800px){
+  .Ancl {
+    overflow: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+}
+
+/*planificacion*/
+.tui-full-calendar-popup-section.tui-full-calendar-section-header {
+  display: none;
+ }
+ span.tui-full-calendar-icon.tui-full-calendar-calendar-dot {
+  display: none;
+}
+img.iconRsssCalendar {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.mainCalendarAvatar > img {
+  border-radius: 100px;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+#calendarList {
+  display: flex;
+  gap: 1em;
+  margin-right: 3em;
+}
+#menu {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tui-full-calendar-popup-top-line {
+  display: none;
+}
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-container {
+  padding: 0;
+  border: solid 0px #d5d5d5;
+  -webkit-box-shadow: 0px 0px 45px 0px rgb(0 0 0 / 49%);
+  -moz-box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.49);
+  box-shadow: 0px 0px 45px 0px rgb(0 0 0 / 49%);
+}
+.tui-full-calendar-content p{
+  text-align: justify;
+  padding: 1.5em;
+  margin-bottom: 0;
+  line-height: 20px;
+}
+.tui-full-calendar-section-detail {
+  height: 50vh;
+  overflow: auto;
+}
+.mainCalendarPerfil {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background: var(--App-color);
+  padding: 15px;
+  width: 302px;
+  position: fixed;
+  z-index: 2;
+}
+.mainCalendarAvatar {
+  width: 50%;
+  display: flex;
+}
+.ContenrdormainCalendarAvatar {
+  width: 50%;
+}
+.mainPublishPost {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.publisPost {
+  background-color: #1dbc61;
+  height: 10px;
+  margin: 0;
+  width: 10px;
+  border-radius: 100px;
+}
+.tui-full-calendar-popup-detail .tui-full-calendar-popup-detail-item-separate {
+  margin-top: 0px !important;
+}
+.tui-full-calendar-section-detail > div:nth-child(1){
+  display: none;
+}
+.tui-full-calendar-popup-detail-item.tui-full-calendar-popup-detail-item-separate {
+  background-color: var(--App-color);
+}
+.rssPublicadas {
+  padding: 5px;
+}
+.tui-full-calendar-section-detail > div > span > img.iconRsssCalendar {
+  margin-top: 75px;
+}
+.mainNameUserAvatar > span {
+  background: #555555;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.mainNameUserAvatar {
+  width: 50%;
+  justify-content: end;
+  display: flex;
+}
+#CalendarVideo {
+  width: 100%;
+  margin-top: 75px;
+}
+.lnb-calendars-item {
+  padding: 0;
+}
+span.tui-full-calendar-weekday-schedule-title, span.tui-full-calendar-weekday-grid-date, .tui-full-calendar-month-dayname-item span{
+  color: var(--Text-color) !important;
+}
+
+button.btn.btn-default.btn-sm.move-day, #dropdownMenu-calendarType, button.btn.btn-default.btn-sm.move-today {
+  background-color: var(--button-color);
+  border: 0;
+  color:  var(--Text-color);
+  width: 147px;
+
+} 
+.tui-full-calendar-month-week-item {
+  height: 21% !important;
+}
+
+
+
+

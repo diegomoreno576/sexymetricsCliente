@@ -1,0 +1,30 @@
+@import "./../ThemeColor.css";
+.AvatarChild {
+    display: flex;
+    gap: 10px;
+    align-content: center;
+    align-items: center;
+}
+.avatar img {
+    width: 50px;
+}
+.AvatarName {
+    color: var(--Text-color);
+    font-size: 1.7em;
+}
+.avatarClose {
+    margin: 0.4em 0em 0.4em 0em;
+}
+
+.avatar {
+    border-radius: 100%;
+}
+.avatar img {
+    border-radius: 100%;
+}
+.avatarOpen img{
+    width: 55px;
+}
+.avatarClose img{
+    width: 45px;  
+}

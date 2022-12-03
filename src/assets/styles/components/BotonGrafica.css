@@ -1,0 +1,64 @@
+.ChartsButtons {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 176px;
+    cursor: pointer;
+}
+.buttonsSpinners.spinner-border {
+    border: var(--bs-spinner-border-width) solid white ;
+    border-right-color: transparent ;
+}
+.loadingButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnNumberPast {
+    font-size: 20px;
+    line-height: 4px;
+    font-weight: 100;
+    color: #ffffff82;
+    margin-top: 4px;
+    text-align: center;
+}
+.btnIconPast {
+    font-size: 50px;
+}
+.graficBtnName {
+    text-align: initial;
+    font-size: 1.2em;
+    font-family: "Work Sans",sans-serif;
+    line-height: 16px;
+    margin: 0;
+    margin-top: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: rgb(255,255,255);
+}
+.BtnNumber {
+    font-size: 25px;
+    line-height: 0px;
+    font-weight: bold;
+    color: white;
+}
+.mainGraficName {
+    padding: 1em 1em 0em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.BtnNumberICon {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 32px;
+    color: white;
+}
+#BtnIcon {
+    font-size: 30px;
+}
+.MainGraficBtnName {
+    padding-left: 1em;
+}

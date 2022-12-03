@@ -1,0 +1,20 @@
+.SeccionTitle p{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.secciones-graficas-row {
+    justify-content: end;
+}
+.description-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+}
+.description-text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    flex-direction: column;
+}

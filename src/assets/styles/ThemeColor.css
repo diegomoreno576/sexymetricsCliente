@@ -1,0 +1,16 @@
+
+html[data-theme='dark'] {
+    --App-color: #333333;
+    --Text-color:  white;
+    --BlackAndGray: #181818;
+    --button-color: #484848;
+    --button-color-hover: rgb(51 51 51 / 75%);
+  }
+  html[data-theme='light'] {
+    --App-color:  #f1f1f1;
+    --Text-color:  #333;
+    --BlackAndGray: #d8d8d8;
+    --button-color: white;
+    --button-color-hover: rgba(81, 92, 230, 0.05);
+  }
+  
