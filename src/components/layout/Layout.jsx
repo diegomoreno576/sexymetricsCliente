@@ -16,13 +16,13 @@ const Layout = ({children}) => {
      return(
       <div className='mainApp'>
           <Header/>
+          
       <div className='row'>
           <div className={"col-12 mainContainer"}>     
            {children}
+           <BarBottom/>
            </div>
-           
          </div>
-         <BarBottom/>
          <Footer/>
      </div>
      )

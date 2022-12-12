@@ -1,0 +1,16 @@
+
+@media only screen and (max-width: 425px){
+    .row {
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    .slick-next {
+        right: 3px;
+    }
+    .slick-prev {
+        left: 3px;
+    }
+}
