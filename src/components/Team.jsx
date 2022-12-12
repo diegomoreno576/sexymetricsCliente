@@ -8,8 +8,6 @@ const Team = () => {
   const [stateLayout, dispatch] = useContext(LayoutContext);
   const [stateApp] = useContext(ThemeContext);
 
-  console.log(stateApp);
-
   const ntcTeam = [
     {
       avatarImg: "https://notecopies.app/wp-content/uploads/2021/06/david-1.png",

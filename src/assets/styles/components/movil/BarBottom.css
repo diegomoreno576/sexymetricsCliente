@@ -1,0 +1,9 @@
+.main_bar_movil {
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    padding: 0em;
+}
+

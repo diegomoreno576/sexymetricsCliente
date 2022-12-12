@@ -8,7 +8,7 @@ export default function useUser () {
 
     const { jwt, setJWT } = useContext(UserContext)
     const [state, dispatch] = useContext(ThemeContext);
-   
+
     const [loading, setloading] = useState( {loading: false, error: false} )
 
     const login = useCallback(({user:{ email, password }}) => {
@@ -16,7 +16,7 @@ export default function useUser () {
 
     loginService({user:{ email, password }})
         .then(data => {
-            dispatch(setCurrentuser(data.user.data));
+            dispatch(setCurrentuser(data));
             window.sessionStorage.setItem('jwt', data.token)
             window.sessionStorage.setItem('blog', JSON.stringify(data.blog) )
             setloading({loading: false, error: false})
@@ -39,6 +39,8 @@ export default function useUser () {
         window.sessionStorage.removeItem('jwt', jwt)
         window.sessionStorage.removeItem('blog')
     })    
+
+ 
 
     return {
         isLogged: Boolean(jwt),

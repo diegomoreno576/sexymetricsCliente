@@ -66,7 +66,6 @@ const MonthCalendar = () => {
     let curret_end_time = end_day + " " + meses[end_month - 1] + " " +  end_year
 
      
-    console.log(start_year)
     return (
      <div>
       <div className="monthpickerTime">

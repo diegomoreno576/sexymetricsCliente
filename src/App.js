@@ -1,4 +1,4 @@
-import React,{useContext, useState} from "react";
+import React,{useContext, useState, useEffect} from "react";
 import { ThemeContext } from "./context";
 import { APP_URL } from "./constants";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -31,6 +31,9 @@ function App(props) {
     users: [],
     messages: []
 })
+
+
+
 
  const updateCurrentUserRooms = (data) => {
     setcurrentUserRooms(data.chatrooms)

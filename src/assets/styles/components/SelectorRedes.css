@@ -99,3 +99,19 @@ a.RedesLink {
 .MainRedes {
     margin: 0.5em;
 }
+
+@media only screen and (max-width: 425px){
+	.Redesdropdown-content {
+        background-color: var(--button-color);
+        left: 0px;
+        bottom: 6em;
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0px;
+    }
+    .Redesdropdown-btn {
+        background-color: transparent;
+        padding: 1em;
+    }
+}
+
