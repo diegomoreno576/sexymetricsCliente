@@ -16,12 +16,12 @@ function BotonGrafica(props) {
     ApexCharts.exec(props.idMixed, "toggleSeries", props.name);
     setToggled(!isToggled);
   };
-  const styles = {
-    ChartBtn: {
-      backgroundColor: props.color,
-      opacity: !isToggled ? "1" : "0.5",
-    },
-  };
+  // const styles = {
+  //   ChartBtn: {
+  //     backgroundColor: props.color,
+  //     opacity: !isToggled ? "1" : "0.5",
+  //   },
+  // };
 
   useEffect(() => {
     setToggled(false);
@@ -31,7 +31,7 @@ function BotonGrafica(props) {
   if(props.datos.length == 0 || state.Loading == true){
     return (
       <div
-      style={styles.ChartBtn}
+      // style={styles.ChartBtn}
       className="ChartsButtons loadingButton"
     >
           <Spinner animation="border" role="status" className="buttonsSpinners">
@@ -42,7 +42,7 @@ function BotonGrafica(props) {
   }else{
   return (
     <div
-      style={styles.ChartBtn}
+      // style={styles.ChartBtn}
       onClick={handleToogleClick}
       className="ChartsButtons"
     >
@@ -99,10 +99,10 @@ function BotonGrafica(props) {
             },
             dropShadow: {
               enabled: false,
-              top: 1,
-              left: 1,
-              blur: 2,
-              opacity: 0.2,
+              opacity: 0.1,
+              blur: 8,
+              left: -2,
+              top: 22
             },
           },
           dataLabels: {
@@ -116,7 +116,7 @@ function BotonGrafica(props) {
             theme: "dark",
           },
           stroke: {
-            width: 5,
+            width: props.type == "line" ? 5 : 0,
             curve: "smooth",
             lineCap: "round",
           },
@@ -135,13 +135,13 @@ function BotonGrafica(props) {
               left: 0,
             },
           },
-          colors: ["white"],
+          colors: [props.color],
           fill: {
             type: "gradient",
             gradient: {
               shade: "dark",
               gradientToColors: ["white"],
-              shadeIntensity: 1,
+              shadeIntensity: 0.5,
               type: "horizontal",
               opacityFrom: 1,
               opacityTo: 1,

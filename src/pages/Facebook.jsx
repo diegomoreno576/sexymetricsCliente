@@ -428,7 +428,7 @@ let totalLikes =  fbLikes.length !== 0 ? parseInt(fbLikes[fbLikes.length - 1][1]
   return (
     <Fragment>
       <PageBanner likes={totalLikes} posts={totalposts} />
-        <div className="container page-container">
+        <div className=" page-container">
         <div class="ancle_dropdown dropdown">
           <button id="seccions_botons" class=" btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Seleciona grupo de metricas

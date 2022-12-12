@@ -21,10 +21,12 @@ const SeccionesGraficas = (props) => {
               <h3>{props.name} </h3>
             </div>
           </div>
-
-          {props.data.map((items) => {
+          <div className="row">
+            <div className="col-6">
+            <div className="row">
+            {props.data.map((items) => {
             return (
-              <div key={items.id} className="col-lg-3 col-md-6 col-12 grafic_button_container">
+              <div key={items.id} className="col-lg-6 col-md-6 col-12 grafic_button_container">
                 <BotonGrafica
                   idMixed={props.id}
                   datos={items.data}
@@ -41,8 +43,10 @@ const SeccionesGraficas = (props) => {
               </div>
             );
           })}
-
-          <div className="mainGraficMixed">
+            </div>
+            </div>
+            <div className="col-6">
+            <div className="mainGraficMixed">
             <MixedGrafica
               id={props.id}
               Timeline={props.timeLine}
@@ -50,6 +54,12 @@ const SeccionesGraficas = (props) => {
               colors={props.colors}
             />
           </div>
+            </div>
+
+          </div>
+        
+
+         
         </div>
       </div>
     </div>

@@ -7,8 +7,7 @@
     fill: var(--Text-color);
 }
 .mainGraficMixed {
-    margin-top: 2em;
-}
-.mainGraficMixed {
-    padding-top: 3em;
+    box-shadow: 0px 1.5em 2em 0px rgb(11 37 124 / 6%);
+    border-radius: 10px;
+    padding: 0.5em;
 }

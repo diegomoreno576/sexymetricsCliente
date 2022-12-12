@@ -43,7 +43,7 @@ span.actualDashboardNumber {
     letter-spacing: 0em;
 }
 .BtnNumber {
-    color: white;
+    color: var(--Text-color );
     font-size: 2.5em;
     font-weight: bold;
     font-family: "Work Sans",sans-serif;

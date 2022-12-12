@@ -1,8 +1,11 @@
+@import "./../ThemeColor.css";
+
 .ChartsButtons {
     border-radius: 20px;
     overflow: hidden;
     height: 176px;
     cursor: pointer;
+    box-shadow: 0px 1.5em 2em 0px rgb(11 37 124 / 6%);
 }
 .buttonsSpinners.spinner-border {
     border: var(--bs-spinner-border-width) solid white ;
@@ -13,11 +16,14 @@
     justify-content: center;
     align-items: center;
 }
+.grafic_button_container {
+    padding-bottom: 2em;
+}
 .btnNumberPast {
     font-size: 20px;
     line-height: 4px;
     font-weight: 100;
-    color: #ffffff82;
+    color: var(--Text-color );
     margin-top: 4px;
     text-align: center;
 }
@@ -35,14 +41,9 @@
     font-weight: 400;
     letter-spacing: 0em;
     text-transform: none;
-    color: rgb(255,255,255);
+    color: var(--Text-color );
 }
-.BtnNumber {
-    font-size: 25px;
-    line-height: 0px;
-    font-weight: bold;
-    color: white;
-}
+
 .mainGraficName {
     padding: 1em 1em 0em 1em;
     display: flex;
@@ -54,7 +55,7 @@
     gap: 8px;
     align-items: center;
     height: 32px;
-    color: white;
+    color: var(--Text-color );
 }
 #BtnIcon {
     font-size: 30px;
