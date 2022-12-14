@@ -16,6 +16,7 @@ import Login from './components/auth/Login';
 import useUser from "./hooks/useUser";
 import ChatRooms from "./components/ChatRoom/ChatRooms";
 import ChatRoomShow from "./components/ChatRoom/ChatRoomShow";
+import ChatRoomNew from "./components/ChatRoom/CreateRoom";
 import Planificacion from "./pages/Planificacion";
 import 'animate.css';
 
@@ -33,7 +34,14 @@ function App(props) {
 })
 
 
-
+const  updateRooms = (data) => {
+  const userrooms = currentUserRooms;
+  setcurrentRoom({
+          chatroom: data.chatroom,
+          users: data.users
+      })
+      setcurrentUserRooms( userrooms.includes(data.chatroom) ? userrooms : userrooms.concat(data.chatroom))
+}
 
  const updateCurrentUserRooms = (data) => {
     setcurrentUserRooms(data.chatrooms)
@@ -50,6 +58,7 @@ function App(props) {
     })
     .then(response => response.json())
     .then(result => {
+      console.log(result)
         if(result.data){
           setcurrentRoom({
                 chatroom: result.data,
@@ -88,6 +97,9 @@ const updateAppStateRoom = (newRoom) => {
             <Route path="/googleads" element={<GoogleAds/>} exact />
             <Route path="/facebookads" element={<FacebooksAds/>} exact />
             <Route path="/planificacion" element={<Planificacion/>} exact />
+            <Route path='/chatroom/new' element={
+                                <ChatRoomNew {...props} currentUser={currentuser} updateRooms={updateRooms} currentRoom={currentRoom['chatroom']}  exact/> 
+                        } />
             <Route path="/chat" element={<ChatRooms currentRoom={currentRoom['chatroom']} updateCurrentUserRooms={updateCurrentUserRooms} currentUser={currentuser} />} exact />
             <Route path='/chatroom/:id' element={ <ChatRoomShow
                                         cableApp={props.cableApp}

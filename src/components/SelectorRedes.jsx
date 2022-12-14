@@ -62,6 +62,11 @@ const SelectorRedes = () => {
       name: "Planificación",
       icon: "	https://notecopies.app/wp-content/uploads/2022/01/calendar.png",
     },
+    {
+      path: "/chat",
+      name: "chat",
+      icon: "	https://notecopies.app/wp-content/uploads/2022/01/calendar.png",
+    },
   ];
 
 

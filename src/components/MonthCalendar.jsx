@@ -46,6 +46,7 @@ const MonthCalendar = () => {
       label: 'Últimos 30 días',
       value: [startOfDay(subDays(new Date(), 29)), endOfDay(new Date())]
     }
+    
   ];
   if(stateLayout.changeLayout == true){
 

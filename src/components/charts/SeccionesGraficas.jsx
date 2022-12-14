@@ -2,6 +2,8 @@ import MixedGrafica from "./MixedGrafica";
 import BotonGrafica from "./BotonGrafica";
 import "../../assets/styles/components/seccionesGraficas.css";
 import { useActiveMenu } from "react-active-menu";
+import PageBanner from "../PageBanner";
+import PostList from "../dashboard/postList/Posts";
 
 
 const SeccionesGraficas = (props) => {
@@ -17,12 +19,18 @@ const SeccionesGraficas = (props) => {
         <div className="row secciones-graficas-row">
           <div className="SeccionTitle">
            
-            <div className="seccionTitle">
-              <h3>{props.name} </h3>
+       
+          </div>
+          <div className="row page_banner_dashboard">
+            <div className="col-4">
+              <PageBanner title={props.name} />
+            </div>
+            <div className="col-8">
+              <PostList data={props.postsList} />
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
+            <div className="col-4">
             <div className="row">
             {props.data.map((items) => {
             return (
@@ -45,7 +53,7 @@ const SeccionesGraficas = (props) => {
           })}
             </div>
             </div>
-            <div className="col-6">
+            <div className="col-8">
             <div className="mainGraficMixed">
             <MixedGrafica
               id={props.id}

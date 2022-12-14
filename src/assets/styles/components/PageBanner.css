@@ -1,23 +1,13 @@
 @import "./../ThemeColor.css";
 
-.page-banner-img{
-    opacity: 0;
-    -webkit-transition: opacity 500ms linear;
-    -moz-transition: opacity 200ms linear;
-    -o-transition: opacity 200ms linear;
-    -ms-transition: opacity 200ms linear;
-    transition: opacity 800ms ease-out; 
+
+.page_banner_dashboard {
+    margin-bottom: 3em;
 }
-.page-banner-img-active{
-    opacity: 1;
-    -webkit-transition: opacity 500ms linear;
-    -moz-transition: opacity 200ms linear;
-    -o-transition: opacity 200ms linear;
-    -ms-transition: opacity 200ms linear;
-    transition: opacity 800ms ease-out; 
-}
+.main_page_banner {
+    border-radius: 20px;
+  }
 .page-banner {
-    z-index: 0;
     width: 100%;
 }
 .page-container{
@@ -38,11 +28,14 @@
     gap: 1em;
 }
 .page_name {
-    display: flex;
-    align-items: center;
     color: var(--Text-color);
+    font-size: 15px;
+    font-weight: 600;
 }
-
+.seccion_description {
+    font-size: 15px;
+    line-height: 26px;
+}
 .page_banner_img img{
     width: 100%;
     height: 100%;
@@ -64,8 +57,9 @@
     font-size: 18px;
 }
 .main_page_banner {
-    background-color: #b9c7e8;
+    box-shadow: 0px 1.5em 2em 0px rgb(11 37 124 / 6%);
 }
 .page_banner {
-    padding: 4em 4em;
+    padding: 1em 1em;
+    height: 420px;
 }

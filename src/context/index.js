@@ -16,6 +16,7 @@ const ThemeContext = createContext({});
 const initialState = {
   isLoggedIn: false,
   currentuser:[],
+  setCurrentPost: {},
   loginError: null,
   darkmode: true,
   FbDatos: [],

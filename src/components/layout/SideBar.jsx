@@ -91,22 +91,7 @@ const Sidebar = () => {
     <>
       <div className="main-container">
         <div className={isOpen ? "sidebar" : "sidebar closeSidebar"}>
-          <div onClick={toggle} className="buttonFlag">
-            <div class="row">
-              <div class="">
-                <div class="toogleBarButton">
-                  <i
-                    class={
-                      isOpen
-                        ? "menuIconCloseOpen fa-solid fa-angles-left"
-                        : "menuIconCloseOpen fa-solid fa-angles-right"
-                    }
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-     
+         
             <div className="sidebarElements">
               <div className="HeaderSection">
                 <div className="sidebarName">

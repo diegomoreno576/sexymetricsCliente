@@ -13,7 +13,7 @@ import Avatar from '@material-ui/core/Avatar';
 import avatar from './img/avatar.jpg';
 import { APP_URL } from '../../constants';
 import { Button } from '@material-ui/core';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles({
     table: {
@@ -42,8 +42,8 @@ const ChatRooms = (props) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log('currentuser ======>', props.currentUser)
-        const { id } =  props.currentUser.attributes;
+        console.log('currentuser ======>', props.currentUser.user.data.attributes)
+        const { id } =  props.currentUser.user.data.attributes;
         fetch(`${APP_URL}/api/v1/chatrooms`, {
             method: 'GET',
             headers: {
@@ -111,9 +111,17 @@ const ChatRooms = (props) => {
                             </Grid>
                         </Grid>
                     </div>) :
-                    (<div>
-                        <h1>Please Create a Room to Chat With friends :)</h1>
-                    </div>)
+                    (
+                        <Link
+                            to="/chatroom/new"
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <Button variant="contained" color="primary">
+                                Create Chatroom
+                            </Button>
+                        </Link>
+                        
+                    )
             }
         </Fragment>
     )  

@@ -11,6 +11,7 @@ const types = {
     SET_TIMEEND: 'SET_TIMEEND',
     SET_TIMESTARTPAST: 'SET_TIMESTARTPAST',
     SET_TIMEENDPAST: 'SET_TIMEENDPAST',
+    SET_CURRENTPOST: 'SET_CURRENTPOST'
   };
   
   export default types;

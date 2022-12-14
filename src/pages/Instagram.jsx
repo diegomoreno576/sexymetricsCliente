@@ -327,6 +327,7 @@ const igAllData = [
    data: igDatosCrecimiento,
    name: 'Crecimiento',
    colors: ['#42a5f5', '#4dd0e1', '#f06292', '#fff176'],
+   postsList: igPosts
   },
   {
    id: 'Alcance de pagina',
@@ -381,6 +382,7 @@ const igAllData = [
         timeLine={TimeLine}
         name={item.name} 
         colors={item.colors}
+        postsList={item.postsList}
           />
       )
       
@@ -416,27 +418,6 @@ const igAllData = [
       </div>
       </div>
       </div>
-    <h3>Lista de Publicaciones</h3>
-      <Slider {...settings}>
-        {igPosts.map((item) => {
-          const fecha = new Date(item.created).toDateString();
-
-          return (
-            <PublicationList
-              picture={item.imageUrl}
-              link={item.url}
-              fecha={fecha}
-              type={item.type}
-              clicks={item.clicks}
-              text={item.content}
-              Likes={item.likes}
-              linkclicks={item.linkclicks}
-              puntos={parseInt(item.engagement)}
-              reproducciones={item.impressions}
-            />
-          );
-        })}
-      </Slider>
   </div>
 
   

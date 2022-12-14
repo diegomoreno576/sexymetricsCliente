@@ -30,12 +30,12 @@ const Layout = ({children}) => {
       return (
         <div className='mainApp'>
          <div className='row'>
-              <div className={changeLayout ? "col-2" : "col-1"}>
+              <div className="col-2">
                  <Sidebar/>
               </div>
              
         
-             <div className={changeLayout ? "col-10 mainContainer" : "col-11 mainContainer"}>     
+             <div className="col-10 mainContainer">     
               {children}
               </div>
               

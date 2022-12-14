@@ -155,7 +155,7 @@ function BotonGrafica(props) {
             data: props.datos,
           },
         ]}
-        height={props.height ? props.height : 90}
+        height={props.height ? props.height : 98}
         type={props.type}
       />
     </div>

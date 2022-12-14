@@ -69,6 +69,12 @@ const reducer = (state, action) => {
         TimeEndPast: action.payload,
         Loading: false,
       };
+    case types.SET_CURRENTPOST:
+      return {
+        ...state,
+        currentPost: action.payload,
+      };
+
 
     default:
       return {

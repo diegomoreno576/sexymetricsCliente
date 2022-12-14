@@ -24,6 +24,7 @@ const Facebook = () => {
   //Fecha pasada a la selecionada
   const startPast = state.TimeStartPast;
   const endPast = state.TimeEndPast;
+  let currentPost = state.currentPost
 
   const { registerContainer, registerSection, registerTrigger } = useActiveMenu(
     {
@@ -394,12 +395,17 @@ const Facebook = () => {
       data: FbDatosCrecimiento,
       name: "Crecimiento de la página",
       colors: ["#42a5f5", "#4dd0e1", "#f06292", "#fff176"],
+      postsList: fbListPublications,
+      postListDetails:{
+        likes: currentPost
+      }
     },
     {
       id: "Alcance de pagina",
       data: AlcancePag,
       name: "Alcance de Páginna",
       colors: ["#42a5f5", "#4dd0e1", "#f06292", "#fff176"],
+      postsList: fbListPublications
     },
     {
       id: "Clicks en pagina",
@@ -427,7 +433,7 @@ let totalposts = useCount(fbPost)
 let totalLikes =  fbLikes.length !== 0 ? parseInt(fbLikes[fbLikes.length - 1][1], 0) : ""
   return (
     <Fragment>
-      <PageBanner likes={totalLikes} posts={totalposts} />
+     {/* <PageBanner likes={totalLikes} posts={totalposts} /> */}
         <div className=" page-container">
         <div class="ancle_dropdown dropdown">
           <button id="seccions_botons" class=" btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -462,6 +468,8 @@ let totalLikes =  fbLikes.length !== 0 ? parseInt(fbLikes[fbLikes.length - 1][1]
                   timeLine={TimeLine}
                   name={item.name}
                   colors={item.colors}
+                  postsList={item.postsList}
+
                 />
               );
             })}
@@ -496,28 +504,6 @@ let totalLikes =  fbLikes.length !== 0 ? parseInt(fbLikes[fbLikes.length - 1][1]
               </div>
             </div>
           </div>
-
-          <h3>Lista de Publicaciones</h3>
-          <Slider {...settings}>
-            {fbListPublications.map((item) => {
-              const fecha = new Date(item.timestamp).toDateString();
-
-              return (
-                <PublicationList
-                  picture={item.picture}
-                  link={item.link}
-                  fecha={fecha}
-                  type={item.type}
-                  clicks={item.clicks}
-                  text={item.text}
-                  Likes={item.reactions}
-                  linkclicks={item.linkclicks}
-                  puntos={parseInt(item.engagement)}
-                  reproducciones={item.videoViews}
-                />
-              );
-            })}
-          </Slider>
          </div>
         </div>
     </Fragment>

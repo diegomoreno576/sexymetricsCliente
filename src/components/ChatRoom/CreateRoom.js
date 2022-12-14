@@ -45,7 +45,7 @@ class CreateRoom extends React.Component {
             roomName: '',
             users: '',
             currentTab: 0,
-            userName: []
+            email: []
         }
     }
 
@@ -55,14 +55,15 @@ class CreateRoom extends React.Component {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'token': localStorage.getItem("jwt")
+                'token': sessionStorage.getItem("jwt") 
             }
         })
         .then(response => response.json())
         .then(data => {
+            console.log('data ======>', data)
             var users = this.state.users;
             this.setState({
-                users: data.map((user) => user.username)
+                users: data.map((user) => user.email)
             })
         })
     }        
@@ -72,15 +73,14 @@ class CreateRoom extends React.Component {
         fetch(`${APP_URL}/api/v1/chatrooms`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'token': localStorage.getItem("jwt")
-            },
+                "content-Type": "application/json",
+                'token': sessionStorage.getItem("jwt") 
+            },  
             body: JSON.stringify({
                 chatroom: {
                     title: this.state.roomName,
                 }, 
-                users: this.state.userName.concat(this.props.currentUser.attributes.username),
+                users: this.state.email.concat(this.props.currentUser.user.data.attributes.username),
             })
         })
         .then(response => response.json())
@@ -117,10 +117,9 @@ class CreateRoom extends React.Component {
 
     render() { 
         const { classes } = this.props;
-        const { users, currentTab, roomName, userName } = this.state;
-
+        const { users, currentTab, roomName, email } = this.state;
         console.log('curent tab ===========> ', currentTab)
-        console.log('username ===========> ', userName)
+        console.log('email ===========> ', email)
         return ( 
             <div className="form-items">
                 <h1>Create Room</h1>
@@ -147,9 +146,9 @@ class CreateRoom extends React.Component {
                             <Select
                             labelId="demo-mutiple-chip-label"
                             id="demo-mutiple-chip"
-                            name="userName"
+                            name="email"
                             multiple
-                            value={userName}
+                            value={email}
                             onChange={this.handleChange}
                             input={<Input id="select-multiple-chip" />}
                             renderValue={(selected) => (
@@ -174,7 +173,7 @@ class CreateRoom extends React.Component {
                     </Button>
                 </form>
                 }
-                {/* {this.state.currentTab === 1 &&  
+                 {this.state.currentTab === 1 &&  
                     <form noValidate autoComplete="off" onSubmit={(e) => this.handleSubmit(e)} >
                         <h3>Enter Room Name</h3>
                         <TextField
@@ -188,7 +187,7 @@ class CreateRoom extends React.Component {
                             Submit
                         </Button>
                     </form>
-                } */}
+                 }
             </div>
         );
     }

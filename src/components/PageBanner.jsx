@@ -26,58 +26,33 @@ const PageBanner = (props) => {
     
   
   return (
-//     <Fragment>
-//         <div className="page-banner"  >  
-    
-//     <div className="page-banner-container">
-//     <div
-//     className={
-//       offset > 10 ? "page-banner-img" : "page-banner-img-active"
-//     }
-//   >
-//             <img src={Banner} alt="" />
-//         </div>
-//         </div> 
-// </div>
-//        <div className="row descripcion-container">
-//             <div className="main_page_avatar">
-//                 <div className="avatar_page">
-//                     <img src={Avatar.picture} alt="" />
-//                     <div>
-//                   </div> 
-                 
-//               </div> 
-//               <div className="page_name">
-//                        <h2>{Avatar.facebook}</h2>
-//                        </div>        
-//             </div>
-//             </div>
-//     </Fragment>
-
 <div className="container main_page_banner">
   <div className=" page_banner">
     <div className="row page_items">
-      <div className="col-6 page_main_avatar">
+      <div className="col-12   page_main_avatar">
         <div className="page_avatar">
           <img src={Avatar.facebookPicture} alt={Avatar.facebook}/>
         </div>
         <div className="page_name_and_data">
           <div className="page_name">
-            <h2>{Avatar.facebook}</h2>
-          </div>
-          <div className="page_main_feature_data">
-              <div className="feature_data">
-                <span>likes  {props.likes}</span>
-              </div>
-              <div className="feature_data">
-               <span> Posts {props.posts}</span>
-              </div>
+            <span>{Avatar.facebook}</span>
           </div>
         </div>
       </div>
-      <div className="col-6 page_banner_img">
-        <img src={Banner} alt=""/>
-    </div>
+      <div className="seccion_title">
+      <div className="seccionTitle">
+              <h3>{props.title} </h3>
+            </div>
+      </div>
+      <div className="col-12 seccion_description">
+          <span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+          molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+          numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+          optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+          obcaecati 
+          </span>
+        </div>
     </div>
   </div>
 </div>
