@@ -397,7 +397,7 @@ const Facebook = () => {
       colors: ["#42a5f5", "#4dd0e1", "#f06292", "#fff176"],
       postsList: fbListPublications,
       postListDetails:{
-        likes: currentPost
+        likes: "5"
       }
     },
     {
@@ -469,6 +469,7 @@ let totalLikes =  fbLikes.length !== 0 ? parseInt(fbLikes[fbLikes.length - 1][1]
                   name={item.name}
                   colors={item.colors}
                   postsList={item.postsList}
+                  postListDetails={item.postListDetails}
 
                 />
               );

@@ -26,7 +26,10 @@ const SeccionesGraficas = (props) => {
               <PageBanner title={props.name} />
             </div>
             <div className="col-8">
-              <PostList data={props.postsList} />
+              <PostList
+               data={props.postsList}
+                postListDetails={props.postListDetails} 
+               />
             </div>
           </div>
           <div className="row">

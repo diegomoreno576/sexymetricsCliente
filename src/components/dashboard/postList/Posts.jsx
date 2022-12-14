@@ -6,6 +6,7 @@ import { ThemeContext } from "../../../context";
 import { setCurentPost } from "../../../actions";
 
 const PostList = (props) => {
+  
   const [state, dispatch] = useContext(ThemeContext);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const PostList = (props) => {
   return (
     <div className="row">
         {/* post list */}
-       <div className="col-6">
+       <div className="col-6 col-post_list">
        <div className="main_post_list">
       {props.data?.map((item) => {
         const event = new Date(item.timestamp);
@@ -34,6 +35,7 @@ const PostList = (props) => {
                   text={item.text}
                   Likes={item.reactions}
                   data={props.data}
+                  details={props.postListDetails}
                 />
               );
             })}

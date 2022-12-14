@@ -1,5 +1,5 @@
 import React,{ useContext} from "react";
-import {ReactComponent as PostIcon} from '../../../assets/img/more.svg'
+import {ReactComponent as PostIcon} from '../../../assets/img/post.svg'
 import { ThemeContext } from "../../../context";
 
 const CurrentPost = (props) => {

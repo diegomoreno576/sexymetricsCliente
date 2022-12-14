@@ -1,6 +1,8 @@
 import React,{useContext} from "react";
 import { ThemeContext } from "../../../context";
 import { setCurentPost } from "../../../actions";
+import {ReactComponent as PostIcon} from '../../../assets/img/post.svg'
+
 
 const PostLists = (props) => {
   const [state, dispatch] = useContext(ThemeContext);
@@ -13,11 +15,18 @@ const PostLists = (props) => {
 
 
 
+
   return (
     <div key={props.id} className="post_list" onClick={findPost}>
       <div className="image_title">
+        <div className="contain_post_image">
+        <div className="type_post_img">
+          <PostIcon />
+        </div>
         <div className="post_image">
           <img src={props.picture} alt="" />
+        </div>
+     
         </div>
         <div className="description_date">
           <div className="post_date">
@@ -25,8 +34,8 @@ const PostLists = (props) => {
           </div>
           <div className="post_title">
             <span>
-              {props.text.length > 60
-                ? props.text.substr(0, 60) + "..."
+              {props.text.length > 40
+                ? props.text.substr(0, 40) + "..."
                 : props.text}
             </span>
           </div>
