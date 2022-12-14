@@ -21,7 +21,7 @@ const PostLists = (props) => {
         </div>
         <div className="description_date">
           <div className="post_date">
-            <h5> {props.fecha} </h5>
+            <span> {props.fecha} </span>
           </div>
           <div className="post_title">
             <span>

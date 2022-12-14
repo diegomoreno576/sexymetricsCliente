@@ -22,7 +22,7 @@ const PostList = (props) => {
        <div className="main_post_list">
       {props.data?.map((item) => {
         const event = new Date(item.timestamp);
-        const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
               const fecha = event.toLocaleDateString('es-ES',options);
 
               return (
