@@ -59,7 +59,7 @@ const  updateRooms = (data) => {
     .then(response => response.json())
     .then(result => {
       console.log(result)
-        if(result.data){
+        if(result.data){  
           setcurrentRoom({
                 chatroom: result.data,
                 users: result.data.attributes.users,

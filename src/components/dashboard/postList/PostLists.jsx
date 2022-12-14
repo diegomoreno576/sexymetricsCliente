@@ -25,7 +25,7 @@ const PostLists = (props) => {
           </div>
           <div className="post_title">
             <span>
-              {props.text.length < 60
+              {props.text.length > 60
                 ? props.text.substr(0, 60) + "..."
                 : props.text}
             </span>
