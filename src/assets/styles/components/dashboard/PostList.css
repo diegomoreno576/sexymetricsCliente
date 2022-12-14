@@ -10,6 +10,12 @@
     object-fit: cover;
     border-radius: 10px;
 }
+.main_header_posts {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+    padding-bottom: 2em;
+}
 .header_post_description {
     margin-bottom: 2em;
     border-radius: 20px;
@@ -37,6 +43,25 @@
 .post_post_description {
     margin-top: 2em;
 }
+.list_buttos_in > span > i{
+    font-size: 20px;
+    margin-top: 3px;
+}
+.list_buttos_in {
+    gap: 0.5em;
+    display: flex;
+    align-items: center;
+}
+.header_post_List_buttons {
+    color: black;
+    padding: 0.5em 2em;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.header_post_List_buttons:hover {
+    background-color: #edf2ff;
+}
 .post_date {
     text-transform: capitalize;
     font-size: 0.875rem;
@@ -46,14 +71,16 @@
 .main_post_list {
     height: 420px;
     overflow: auto;
-    padding: 2em 2em;
+    padding: 0em 2em;
+}
+.header_post_list_name {
+    font-size: 18px;
 }
 .post_image {
     margin-top: -24px;
 }
-.type_post_img svg{
-    width: 20px;
-    height: 18px;
+.type_post_img i{
+   font-size: 18px;
 }
 .type_post_img {
     background-color: #edf0ff;
@@ -121,13 +148,35 @@
     gap: 2em;
 }
 .main_post_list_description {
-    box-shadow: 0px 1.5em 2em 0px rgb(11 37 124 / 6%);
     padding: 1.5em;
     border-radius: 20px;
     height: 420px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.post_description_items {
+    margin-bottom: 0;
+    padding: 1em;
+}
+.current_post_link {
+    margin-top: 2em;
+}
+.table_current_post {
+    background-color: #edf0ff;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0;
+}
+.type_post_item {
+    border-radius: 20px;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: bold;
+}
+.current_post_link a{
+    color: white;
+    font-size: 15px;
+    background-color: #2800a8;
+    padding: 0.8em 1.2em;
+    border-radius: 100em;
 }
 .post_post_like {
     text-align: center;
@@ -139,9 +188,15 @@
 .post_likes_number {
     font-size: 16px;
 }
-.description_image img{
+.description_image img {
     width: 100%;
-    height: 90px;
     object-fit: cover;
     border-radius: 20px;
+    height: 120px;
+}
+.post_description_date {
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0.7em;
 }

@@ -16,12 +16,13 @@ const PostLists = (props) => {
 
 
 
+
   return (
     <div key={props.id} className="post_list" onClick={findPost}>
       <div className="image_title">
         <div className="contain_post_image">
         <div className="type_post_img">
-          <PostIcon />
+           <i class="fa-light fa-square-plus"></i>
         </div>
         <div className="post_image">
           <img src={props.picture} alt="" />

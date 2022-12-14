@@ -4,9 +4,17 @@
 .page_banner_dashboard {
     margin-bottom: 3em;
 }
+.page_banner_dashboard {
+    height: 470px;
+}
 .main_page_banner {
     border-radius: 20px;
   }
+  .container.main_page_banner {
+    background: rgb(34,193,195);
+    background: linear-gradient(25deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    height: 100%;
+}
 .page-banner {
     width: 100%;
 }
@@ -61,5 +69,4 @@
 }
 .page_banner {
     padding: 1em 1em;
-    height: 420px;
 }

@@ -24,7 +24,6 @@ const Facebook = () => {
   //Fecha pasada a la selecionada
   const startPast = state.TimeStartPast;
   const endPast = state.TimeEndPast;
-  let currentPost = state.currentPost
 
   const { registerContainer, registerSection, registerTrigger } = useActiveMenu(
     {
@@ -388,7 +387,7 @@ const Facebook = () => {
       color: "#fff176",
     },
   ];
-
+console.log(!state.currentPost ? 0 : 1 )
   const FbAllData = [
     {
       id: "Crecimiento",
@@ -397,7 +396,14 @@ const Facebook = () => {
       colors: ["#42a5f5", "#4dd0e1", "#f06292", "#fff176"],
       postsList: fbListPublications,
       postListDetails:{
-        likes: "5"
+        // likes: !state.currentPost ? 0 : state.currentPost.reactions,
+        // comentarios: state.currentPost.comments,
+        // compartidos: state.currentPost.shares,
+        // clicks: state.currentPost.clicks,
+        // impresiones: state.currentPost.impressions,
+        // alcance: state.currentPost.impressionsUnique,
+        // reproducciones: state.currentPost.videoViews,
+        // engagement: state.currentPost.engagement,
       }
     },
     {
@@ -405,7 +411,10 @@ const Facebook = () => {
       data: AlcancePag,
       name: "Alcance de Páginna",
       colors: ["#42a5f5", "#4dd0e1", "#f06292", "#fff176"],
-      postsList: fbListPublications
+      postsList: fbListPublications,
+      postListDetails:{
+        // likes: !state.currentPost ? 0 : state.currentPost.reactions,
+      }
     },
     {
       id: "Clicks en pagina",
