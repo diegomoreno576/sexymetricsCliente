@@ -1,12 +1,18 @@
-import React,{useState, useEffect, Fragment} from 'react'
+import React,{useState, useEffect, Fragment, useContext} from 'react'
 import Banner from "../assets/img/banner_superior.png"
 import '../assets/styles/components/PageBanner.css'
 import { SiFacebook } from "react-icons/si";
 import useData from '../hooks/useData';
 import ComunityVitual from './ComunityVitual';
+import OpenAIAPI from "react-openai-api";
+import openAi from '../services/openAi';
+import { ThemeContext } from '../context';
+
+//const openai = new OpenAIAPI("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");
 
 const PageBanner = (props) => {
-
+  const [msgPage, setmsgPage] = useState()
+  const [state, dispatch] = useContext(ThemeContext);
    
     const [offset, setOffset] = useState(0);
 
@@ -19,10 +25,47 @@ const PageBanner = (props) => {
     }, []);
 
 
+        
+     const start = state.TimeStart;
+     const end = state.TimeEnd;
+
+     const startPast = state.TimeStartPast;
+     const endPast = state.TimeEndPast;
+
 
     const Avatar = useData(
       `/admin/profile`,
      );
+
+      //FbBody
+  const fbbody = useData(`/stats/aggregations/Facebook`, start, end);
+
+  //FbBodyPast
+  const fbbodyPast = useData(
+    `/stats/aggregations/Facebook`,
+    startPast,
+    endPast
+  );
+  let ganados = fbbody.Follows;
+  let ganadosPast = fbbodyPast.Follows;
+
+
+  //   //  let prompt = `Comparame los datos del like en mi págnina de 
+  //   //  facebook del dia 01 de diciembre que fueron 20 likes con los del 10 de diciembre que 
+  //   //  fueron 200 likes y dame una conclusión`
+    let prompt = `Comparame los usuarios ganados en mi pagina de facebook de la fecha ${start} a ${end}  que fueron ${ganados} con los del
+    ${startPast} al ${endPast} que fueron ${ganadosPast} y dime una conclusion y dame un consejo y una valoración con iconos de estrellas`
+    console.log(prompt)
+    useEffect(() => {
+      const getResponse = async () => {
+        const response = await openAi(prompt);
+        
+        setmsgPage(response.choices[0].text)
+      }
+      getResponse();
+
+
+    }, [start,end ])
     
   
   return (
@@ -46,11 +89,7 @@ const PageBanner = (props) => {
       </div>
       <div className="col-12 seccion_description">
           <span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-          molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-          numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-          optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-          obcaecati 
+        {msgPage}
           </span>
         </div>
     </div>

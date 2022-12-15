@@ -39,9 +39,10 @@ const PostLists = (props) => {
   }, [props.data]);
 
 
-  
   return (
     <div id={`${props.id}`} key={props.id} className="post_list" onClick={findPost}>
+   
+
       <div className="image_title">
         <div className="contain_post_image">
         <div className="type_post_img">
@@ -57,11 +58,11 @@ const PostLists = (props) => {
             <span> {props.fecha} </span>
           </div>
           <div className="post_title">
-            {/* <span>       
+            <span>       
               {props.text.length > 40
                 ? props.text.substr(0, 40) + "..."
                 : props.text}
-            </span> */}
+            </span>
           </div>
         </div>
       </div>
@@ -69,8 +70,8 @@ const PostLists = (props) => {
       <div className="post_post_like">
         <span>Likes</span>
         <span class="post_likes_number">
-          {" "}
-          <strong> {props.Likes} </strong>{" "}
+         
+          <strong> {props.Likes == undefined ? 0 : props.Likes } </strong>
         </span>
       </div>
     </div>

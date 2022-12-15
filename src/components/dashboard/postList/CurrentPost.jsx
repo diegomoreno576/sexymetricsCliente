@@ -54,11 +54,10 @@ const CurrentPost = (props) => {
                      
                     <span> { currentPost.type } </span>
                   </div>
-
-                  <div className="current_post_link">
+                </div>
+                <div className="current_post_link">
                     <a href="#" target="_blank">Ver publicación</a>
                   </div>
-                </div>
               </div>
             </div>
           </div>

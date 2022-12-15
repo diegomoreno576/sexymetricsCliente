@@ -7,7 +7,6 @@ import { setCurentPost } from "../../../actions";
 import {ReactComponent as PostIcon} from '../../../assets/img/post.svg'
 
 const PostList = (props) => {
-  
   const [state, dispatch] = useContext(ThemeContext);
 
   useEffect(() => {

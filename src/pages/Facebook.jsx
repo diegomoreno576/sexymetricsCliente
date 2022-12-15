@@ -395,12 +395,10 @@ const Facebook = () => {
    clicks: !state.currentPost ? 0 : state.currentPost.clicks,
    links: !state.currentPost ? 0 : state.currentPost.linkclicks,
    impresiones: !state.currentPost ? 0 : state.currentPost.impressions,
-   impr_pagadas: !state.currentPost ? 0 : state.currentPost.impressionsPaid,
    alcance: !state.currentPost ? 0 : state.currentPost.impressionsUnique,
    reproducciones: !state.currentPost ? 0 : state.currentPost.videoViews,
-   T_Reproducción: !state.currentPost ? 0 : state.currentPost.videoTimeWatched,
    gasto: !state.currentPost ? 0 : state.currentPost.spend,
-   puntuación: !state.currentPost ? 0 : state.currentPost.engagement,
+   engagement: !state.currentPost ? 0 : state.currentPost.engagement,
  }
 
   const FbAllData = [
