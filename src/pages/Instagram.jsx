@@ -85,8 +85,29 @@ const igStoriesCountPast  = useData("/stats/timeline/igStoriesCount", startPast,
 
  const igCities  = useData("/stats/city/instagram", start, end);
  const igCity = Object.entries(igCities);
+
+
  //Tabla Posts
  const igPosts  = useData("/stats/instagram/posts", start, end);
+ //instagrams reels
+  const igReels  = useData("/stats/instagram/reels", start, end);
+  //instagrams stories
+  const igStories  = useData("/stats/instagram/stories", start, end);
+  //instagrams hastash
+  const igHastash  = useData("/stats/instagram/hashtags", start, end);
+
+
+
+
+  //concatenar allposts 
+  const allPosts = igPosts.concat(igReels, igStories, igHastash);
+
+
+
+
+  
+
+
 
 
       const TimeLine = igUnFollows.map((d) => {
@@ -319,7 +340,15 @@ color: '#4dd0e1'
 
 
 ]
-
+let postListDetails = {
+  likes: !state.currentPost ? 0 : state.currentPost.likes,
+ impresiones: !state.currentPost ? 0 : state.currentPost.impressions,
+ puntuación: !state.currentPost ? 0 : state.currentPost.engagement,
+  alcance: !state.currentPost ? 0 : state.currentPost.reach,
+  comentarios: !state.currentPost ? 0 : state.currentPost.comments,
+  guardados: !state.currentPost ? 0 : state.currentPost.saved,
+  
+}
 
 const igAllData = [
   {
@@ -327,7 +356,8 @@ const igAllData = [
    data: igDatosCrecimiento,
    name: 'Crecimiento',
    colors: ['#42a5f5', '#4dd0e1', '#f06292', '#fff176'],
-   postsList: igPosts
+   postsList: igPosts,
+    postListDetails: postListDetails,
   },
   {
    id: 'Alcance de pagina',
@@ -383,6 +413,7 @@ const igAllData = [
         name={item.name} 
         colors={item.colors}
         postsList={item.postsList}
+        postListDetails={item.postListDetails}
           />
       )
       

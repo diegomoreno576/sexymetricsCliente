@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React,{useContext, useEffect} from "react";
 import { ThemeContext } from "../../../context";
 import { setCurentPost } from "../../../actions";
 import {ReactComponent as PostIcon} from '../../../assets/img/post.svg'
@@ -7,18 +7,41 @@ import {ReactComponent as PostIcon} from '../../../assets/img/post.svg'
 const PostLists = (props) => {
   const [state, dispatch] = useContext(ThemeContext);
 
+
+
   //find de pos id onClick  
   const findPost = () => {
     const post = props.data.find((item) => item.postId === props.id);
     dispatch(setCurentPost(post));
+
+    //add active class to the post
+    const postList = document.querySelectorAll(".post_list");
+    postList.forEach((item) => {
+      item.classList.remove("active_post");
+    }
+    );
+    document.getElementById(`${props.id}`).classList.add("active_post");
+
+  
+
   };
 
+  //add active class to the first post useEffect
+  useEffect(() => {
+  
+    if (props.id === props.data[0].postId) {
+
+      const first_post = document.getElementById(`${props.id}`)
+      if(first_post){
+        first_post.classList.add("active_post");
+      }
+    }
+  }, [props.data]);
 
 
-
-
+  
   return (
-    <div key={props.id} className="post_list" onClick={findPost}>
+    <div id={`${props.id}`} key={props.id} className="post_list" onClick={findPost}>
       <div className="image_title">
         <div className="contain_post_image">
         <div className="type_post_img">
@@ -34,11 +57,11 @@ const PostLists = (props) => {
             <span> {props.fecha} </span>
           </div>
           <div className="post_title">
-            <span>
+            {/* <span>       
               {props.text.length > 40
                 ? props.text.substr(0, 40) + "..."
                 : props.text}
-            </span>
+            </span> */}
           </div>
         </div>
       </div>

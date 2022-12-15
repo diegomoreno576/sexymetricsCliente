@@ -16,7 +16,6 @@ const PostList = (props) => {
   }, [props.data]);
   
 
-
   return (
     <div className="row">
       <div className="main_header_posts">
@@ -59,11 +58,11 @@ const PostList = (props) => {
             return (
               <PostLists
                 id={item.postId}
-                picture={item.picture}
+                picture={item.picture ? item.picture : item.imageUrl}
                 fecha={fecha}
                 type={item.type}
-                text={item.text}
-                Likes={item.reactions}
+                text={item.text ? item.text : item.content}
+                Likes={item.reactions ? item.reactions : item.likes}
                 data={props.data}
               />
             );

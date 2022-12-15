@@ -16,12 +16,12 @@ function BotonGrafica(props) {
     ApexCharts.exec(props.idMixed, "toggleSeries", props.name);
     setToggled(!isToggled);
   };
-  // const styles = {
-  //   ChartBtn: {
-  //     backgroundColor: props.color,
-  //     opacity: !isToggled ? "1" : "0.5",
-  //   },
-  // };
+  const styles = {
+    ChartBtn: {
+     // backgroundColor: props.color,
+      opacity: !isToggled ? "1" : "0.5",
+    },
+  };
 
   useEffect(() => {
     setToggled(false);
@@ -31,7 +31,7 @@ function BotonGrafica(props) {
   if(props.datos.length == 0 || state.Loading == true){
     return (
       <div
-      // style={styles.ChartBtn}
+      style={styles.ChartBtn}
       className="ChartsButtons loadingButton"
     >
           <Spinner animation="border" role="status" className="buttonsSpinners">
@@ -42,7 +42,7 @@ function BotonGrafica(props) {
   }else{
   return (
     <div
-      // style={styles.ChartBtn}
+      style={styles.ChartBtn}
       onClick={handleToogleClick}
       className="ChartsButtons"
     >
