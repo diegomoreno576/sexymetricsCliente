@@ -3,7 +3,7 @@ export default async function openAi (prompt) {
         method: 'POST',
         headers: {
             "content-Type": "application/json",
-            "Authorization": "Bearer  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"
+            "Authorization": "Bearer  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"
         },
 
         body: JSON.stringify({
@@ -16,7 +16,7 @@ export default async function openAi (prompt) {
                 presence_penalty: 0})
     })
     if (!res.ok)
-        throw new Error('Response is no ok')
+        throw new Error(res.statusText)
     const res_1 = await res.json()
     return res_1
 }

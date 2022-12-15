@@ -55,7 +55,7 @@ const PageBanner = (props) => {
   //   //  fueron 200 likes y dame una conclusión`
     let prompt = `Comparame los usuarios ganados en mi pagina de facebook de la fecha ${start} a ${end}  que fueron ${ganados} con los del
     ${startPast} al ${endPast} que fueron ${ganadosPast} y dime una conclusion y dame un consejo y una valoración con iconos de estrellas`
-    console.log(prompt)
+  
     useEffect(() => {
       const getResponse = async () => {
         const response = await openAi(prompt);

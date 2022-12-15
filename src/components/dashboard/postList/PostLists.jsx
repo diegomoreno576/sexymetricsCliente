@@ -58,11 +58,11 @@ const PostLists = (props) => {
             <span> {props.fecha} </span>
           </div>
           <div className="post_title">
-            <span>       
-              {props.text.length > 40
+            {/* <span>       
+              {!props.text.length > 40
                 ? props.text.substr(0, 40) + "..."
                 : props.text}
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
