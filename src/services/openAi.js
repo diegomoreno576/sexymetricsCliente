@@ -3,7 +3,7 @@ export default async function openAi (prompt) {
         method: 'POST',
         headers: {
             "content-Type": "application/json",
-            "Authorization": "Bearer  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"
+            "Authorization": "Bearer  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"
         },
 
         body: JSON.stringify({
