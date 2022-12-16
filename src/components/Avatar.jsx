@@ -17,9 +17,9 @@ const Avatar = () => {
          <div className={state.changeLayout ? "avatar avatarOpen" : "avatar avatarClose" }>
            <img src={Avatar.picture} alt="" />
          </div>
-         {state.changeLayout == true && 
+         {/* {state.changeLayout == true && 
           <div className="AvatarName">{Avatar.label}</div>
-         }
+         } */}
         
        </div>
      </div>

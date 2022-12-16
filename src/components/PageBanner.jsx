@@ -50,10 +50,26 @@ const PageBanner = (props) => {
   let ganadosPast = fbbodyPast.Follows;
 
 
-  //   //  let prompt = `Comparame los datos del like en mi págnina de 
-  //   //  facebook del dia 01 de diciembre que fueron 20 likes con los del 10 de diciembre que 
-  //   //  fueron 200 likes y dame una conclusión`
-    let prompt = `Comparame los usuarios ganados en mi pagina de facebook de la fecha ${start} a ${end}  que fueron ${ganados} con los del
+  let start_year = start[0] + start[1] + start[2] + start[3]
+    let start_month = start[4] + start[5]
+    let start_day = start[6] + start[7]
+
+    
+
+    let end_year = end[0] + end[1] + end[2] + end[3] 
+    let end_month = end[4] + end[5]
+    let end_day = end[6] + end[7]
+
+
+    const meses = ["Ene", "Febr", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+    
+    let curret_start_time = start_day + " " + meses[start_month - 1] + " " + start_year 
+    let curret_end_time = end_day + " " + meses[end_month - 1] + " " +  end_year
+
+  
+
+
+    let prompt = `Comparame los usuarios ganados en mi pagina de facebook de la fecha ${curret_start_time} a ${curret_end_time}  que fueron ${ganados} con los del
     ${startPast} al ${endPast} que fueron ${ganadosPast} y dime una conclusion y dame un consejo y una valoración con iconos de estrellas`
   
     useEffect(() => {
@@ -84,7 +100,7 @@ const PageBanner = (props) => {
       </div>
       <div className="seccion_title">
       <div className="seccionTitle">
-              <h3>{props.title} </h3>
+              <span>{props.title} </span>
             </div>
       </div>
       <div className="col-12 seccion_description">

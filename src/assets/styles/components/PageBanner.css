@@ -11,9 +11,15 @@
     border-radius: 20px;
   }
   .container.main_page_banner {
-    background: rgb(34,193,195);
-    background: linear-gradient(25deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background: #9d1d5d;
+    background: linear-gradient(166deg, #e5097f 28%, #9d1d5d 100%);
     height: 100%;
+}
+.page_main_avatar {
+    box-shadow: 0px 1em 3em 0px #0000002e;
+    padding: 1.5em 1em;
+    border-radius: 20px;
+    margin-bottom: 3em;
 }
 .page-banner {
     width: 100%;
@@ -54,6 +60,11 @@
     align-items: center;
     gap: 2em;
 }
+.page_name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
 .page_avatar img{
     border-radius: 100%;
 }
@@ -64,9 +75,7 @@
 .feature_data span{
     font-size: 18px;
 }
-.main_page_banner {
-    box-shadow: 0px 1.5em 2em 0px rgb(11 37 124 / 6%);
-}
+
 .page_banner {
     padding: 1em 1em;
 }

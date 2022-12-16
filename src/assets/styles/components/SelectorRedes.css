@@ -14,7 +14,8 @@
     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
 }
 .Redesdropdown-btn:hover {
-       background-color: rgb(14,48,168);
+    background-color: rgb(237 237 255);
+    color: black;
     transition-duration: 300ms;
 }
 .Redesdropdown-content::-webkit-scrollbar{
@@ -43,7 +44,7 @@
     margin-left: 1em;
 }
 .Redesdropdown-btn:hover .RedesTextButton{
-    color: white;
+    color: black;
   
 }
 .Redesdropdown-contentChild {
@@ -69,12 +70,16 @@ a.RedesLink:hover {
     background-color:  var(--button-color-hover);
     transition-duration: 300ms;
 }
+a.menu-item:hover {
+    background-color: #edf2ff;
+    color: black;
+}
 .Redesdropdown-btn {
-    background-color: var(--button-color);
     padding: 1em;
     cursor: pointer;
     border-radius: 100em;
     padding: 1em 2.5em;
+    color: black;
 }
 a.RedesLink {
     padding: 1em;
@@ -93,9 +98,7 @@ a.RedesLink {
 .IconoCaret{
     float: right;
 }
-.active{
-    display: none !important;
-}
+
 .MainRedes {
     margin: 0.5em;
 }

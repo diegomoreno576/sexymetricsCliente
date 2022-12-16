@@ -3,6 +3,19 @@ import { useState, useContext } from "react";
 import "../assets/styles/components/SelectorRedes.css";
 import useComponentVisible from '../hooks/useComponentVisible';
 import { LayoutContext } from "../context/layoutContext";
+import {
+  BsFacebook,
+  BsTwitter,
+  BsLinkedin,
+  BsMegaphoneFill
+} from "react-icons/bs";
+import { ImHome } from "react-icons/im";
+import { GrInstagram } from "react-icons/gr";
+import { SiGooglemybusiness, SiGoogleads } from "react-icons/si";
+import { FaGlobe } from "react-icons/fa";
+
+
+
 const SelectorRedes = () => {
 
   const [state, dispatch] = useContext(LayoutContext);
@@ -15,58 +28,48 @@ const SelectorRedes = () => {
     {
       path: "/",
       name: "Inicio",
-      icon: 'https://notecopies.app/wp-content/uploads/2022/06/DB_SM.png',
+      icon: <ImHome/>,
     },
     {
       path: "/facebook",
       name: "Facebook",
-      icon: 'https://notecopies.app/wp-content/uploads/2022/01/facebook.png',
+      icon: <BsFacebook/>,
     },
     {
       path: "/instagram",
       name: "Instagram",
-      icon: 'https://notecopies.app/wp-content/uploads/2022/01/instagram.png',
+      icon: <GrInstagram/>,
     },
     {
       path: "/twitter",
       name: "Twitter",
-      icon: 'https://notecopies.app/wp-content/uploads/2022/01/twitter.png',
+      icon: < BsTwitter/>,
     },
     {
       path: "/linkeding",
       name: "Linkeding",
-      icon: '	https://notecopies.app/wp-content/uploads/2022/01/linkedin.png',
+      icon: <BsLinkedin/>,
     },
     {
       path: "/googlemybussines",
       name: "Google my Bussines",
-      icon: 'https://notecopies.app/wp-content/uploads/2021/05/google-myb.png',
+      icon: <SiGooglemybusiness/>,
     },
     {
       path: "/web",
       name: "Web",
-      icon: 'https://notecopies.app/wp-content/uploads/2022/01/red-mundial.png',
+      icon: <FaGlobe/>,
     },
     {
       path: "/googleads",
       name: "Google Ads",
-      icon: 'https://notecopies.app/wp-content/uploads/2021/05/google-ads.png',
+      icon: <SiGoogleads/>,
     },
     {
       path: "/facebookads",
       name: "Facebook Ads",
-      icon: 'https://notecopies.app/wp-content/uploads/2021/05/facebook-ads-2.png',
-    },
-    {
-      path: "/planificacion",
-      name: "Planificación",
-      icon: "	https://notecopies.app/wp-content/uploads/2022/01/calendar.png",
-    },
-    {
-      path: "/chat",
-      name: "chat",
-      icon: "	https://notecopies.app/wp-content/uploads/2022/01/calendar.png",
-    },
+      icon: <BsMegaphoneFill/>,
+    }
   ];
 
 
@@ -86,7 +89,7 @@ const SelectorRedes = () => {
           }}
           className="Redesdropdown-btn"
         >
-           <img className="RedesIcono" src={selected.Imagen} width="64" height="64" alt="Image" loading="lazy"/>
+           {selected.Imagen}
             <span className="RedesTextButton">{selected.Texto}</span>
           <span
             className={isComponentVisible ? "IconoCaret fas fa-caret-up" : "IconoCaret fas fa-caret-down"}
@@ -114,7 +117,7 @@ const SelectorRedes = () => {
                 activeClassName="Redesactive"
               >
                 <div className="icon">
-                  <img className="RedesIcono" src={route.icon} width="64" height="64" alt="Image" loading="lazy"/>
+                  {route.icon}
                   <span className="RedesText">
                     {route.name}
                     </span>

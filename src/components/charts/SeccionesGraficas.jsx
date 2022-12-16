@@ -7,13 +7,14 @@ import PostList from "../dashboard/postList/Posts";
 
 
 const SeccionesGraficas = (props) => {
-  const { registerContainer, registerSection, registerTrigger } = useActiveMenu(
+  const { registerContainer, registerSection } = useActiveMenu(
     {
       smooth: true,
     }
   );
 
   return (
+    
     <div ref={registerContainer}>
       <div ref={registerSection(props.name)} id={props.name}>
         <div className="row secciones-graficas-row">

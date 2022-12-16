@@ -1,82 +1,26 @@
-import { FaFacebookF } from "react-icons/fa";
-import {
-  BsInstagram,
-  BsTwitter,
-  BsLinkedin,
-  BsCalendarRange,
-} from "react-icons/bs";
-import { SiGooglemybusiness, SiGoogleads } from "react-icons/si";
-import { MdCampaign } from "react-icons/md";
-import { RiHome6Fill } from "react-icons/ri";
-import { AiOutlineGlobal } from "react-icons/ai";
 import { useState, useContext, useEffect } from "react";
 import { LayoutContext } from "../../context/layoutContext";
-import { AnimatePresence, motion } from "framer-motion";
 import DarkMode from "../DarkMode";
 import "../../assets/styles/components/SideBar.css";
 import Logout from "../auth/Logout";
-import Avatar from "../Avatar";
 import SelectorRedes from "../SelectorRedes";
 import MonthYearCalendar from "../MonthCalendar";
 import { setchangeLayout } from "../../actions";
 import Team from "../Team";
+import { NavLink } from "react-router-dom";
+import { BsFillChatLeftDotsFill, BsCalendar2WeekFill } from "react-icons/bs";
 
 const routes = [
-  {
-    path: "/",
-    name: "inicio",
-    icon: <RiHome6Fill />,
-  },
-  {
-    path: "/facebook",
-    name: "Facebook",
-    icon: <FaFacebookF />,
-  },
-  {
-    path: "/instagram",
-    name: "Instagram",
-    icon: <BsInstagram />,
-  },
-  {
-    path: "/twitter",
-    name: "twitter",
-    icon: <BsTwitter />,
-  },
-  {
-    path: "/linkeding",
-    name: "Linkeding",
-    icon: <BsLinkedin />,
-  },
-  {
-    path: "/googlemybussines",
-    name: "Google my Bussines",
-    icon: <SiGooglemybusiness />,
-  },
-  {
-    path: "/web",
-    name: "web",
-    icon: <AiOutlineGlobal />,
-  },
-  {
-    path: "/googleads",
-    name: "Google Ads",
-    icon: <SiGoogleads />,
-  },
-  {
-    path: "/facebookads",
-    name: "Facebook Ads",
-    icon: <MdCampaign />,
-  },
-  {
-    path: "/planificacion",
-    name: "Planificación",
-    icon: <BsCalendarRange />,
-  },
-  {
-    path: "/chat",
-    name: "Chat",
-    icon: <BsCalendarRange />,
-  },
+      {
+        path: "/planificacion",
+        name: "Planificación",
+        icon: <BsCalendar2WeekFill/>,
+      },
+      {
+        path: "/chat",
+        name: "chat",
+        icon: <BsFillChatLeftDotsFill/>
+      },
 ];
 
 const Sidebar = () => {
@@ -95,7 +39,6 @@ const Sidebar = () => {
             <div className="sidebarElements">
               <div className="HeaderSection">
                 <div className="sidebarName">
-                  <Avatar />
                 </div>
 
                 <div className="UltilsButtons">
@@ -110,14 +53,37 @@ const Sidebar = () => {
                 <section className="MainRedes">
                   <SelectorRedes />
                 </section>
-              </div>
-              <div className="monthPicker">
+                <div className="monthPicker">
                 <section className="mainCalendar">
                   <MonthYearCalendar />
                 </section>
               </div>
+                <section className="outSideMenu">
+   
+                    {routes.map((route, index) => {
+                        return (
+                          <div
+                        className="Redesitem">
+                        <NavLink
+                            to={route.path}
+                            key={index}
+                            className="RedesLink_outside"
+                            activeClassName="Redesactive"
+                          >
+                            <div className="icon_red_outside">
+                              {route.icon}
+                              <span className="RedesText">
+                                {route.name}
+                                </span>
+                                </div>
+                          </NavLink>
+                      </div>
+                        );
+                      })}
+                    </section>
+              </div>
+              
             </div>
-
         </div>
       </div>
     </>

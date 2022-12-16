@@ -24,7 +24,6 @@ import 'animate.css';
 
 function App(props) {
   const [state, dispatch] = useContext(ThemeContext);
-  console.log(state)
   const {currentuser} = state
   const [currentUserRooms, setcurrentUserRooms] = useState([])
   const [currentRoom, setcurrentRoom] = useState({
@@ -58,7 +57,6 @@ const  updateRooms = (data) => {
     })
     .then(response => response.json())
     .then(result => {
-      console.log(result)
         if(result.data){  
           setcurrentRoom({
                 chatroom: result.data,

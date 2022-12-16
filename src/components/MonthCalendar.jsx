@@ -50,29 +50,30 @@ const MonthCalendar = () => {
   ];
   if(stateLayout.changeLayout == true){
 
-    let start_year = start[0] + start[1] + start[2] + start[3]
-    let start_month = start[4] + start[5]
-    let start_day = start[6] + start[7]
+    // let start_year = start[0] + start[1] + start[2] + start[3]
+    // let start_month = start[4] + start[5]
+    // let start_day = start[6] + start[7]
 
     
 
-    let end_year = end[0] + end[1] + end[2] + end[3] 
-    let end_month = end[4] + end[5]
-    let end_day = end[6] + end[7]
+    // let end_year = end[0] + end[1] + end[2] + end[3] 
+    // let end_month = end[4] + end[5]
+    // let end_day = end[6] + end[7]
 
 
-    const meses = ["Ene", "Febr", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+    // const meses = ["Ene", "Febr", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
     
-    let curret_start_time = start_day + " " + meses[start_month - 1] + " " + start_year 
-    let curret_end_time = end_day + " " + meses[end_month - 1] + " " +  end_year
+    // let curret_start_time = start_day + " " + meses[start_month - 1] + " " + start_year 
+    // let curret_end_time = end_day + " " + meses[end_month - 1] + " " +  end_year
 
      
     return (
      <div>
-      <div className="monthpickerTime">
+      {/* <div className="monthpickerTime">
          <span>{curret_start_time + " - " + curret_end_time}</span>
-      </div>
+      </div> */}
        <DateRangePicker
+       placeholder="Selecciona un rango de fecha"
        className='MonthCalendar'  
        editable={false}
        cleanable={false}
@@ -81,14 +82,16 @@ const MonthCalendar = () => {
         ranges={Ranges}
         format="dd-MM-yyyy" 
         value={value} 
-       open={true}
+      // open={true}
         onChange={setValue} />
      </div>
     )
   }
 
   
-}
+   
+  
+  }
 
 export default MonthCalendar
 

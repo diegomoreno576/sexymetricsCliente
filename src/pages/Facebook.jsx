@@ -14,7 +14,6 @@ import { settings } from "../slicks/slickConfig";
 import useCount from "../hooks/useCount";
 import ChartEdad from "../components/charts/ChartEdad";
 import CitiesList from "../components/Lists/CitiesList";
-import { useActiveMenu } from "react-active-menu";
 import PageBanner from '../components/PageBanner';
 
 const Facebook = () => {
@@ -25,11 +24,7 @@ const Facebook = () => {
   const startPast = state.TimeStartPast;
   const endPast = state.TimeEndPast;
 
-  const { registerContainer, registerSection, registerTrigger } = useActiveMenu(
-    {
-      smooth: true,
-    }
-  );
+
 
   //FbBody
   const fbbody = useData(`/stats/aggregations/Facebook`, start, end);
@@ -438,35 +433,9 @@ const Facebook = () => {
   }, []);
 
 
-let totalposts = useCount(fbPost)
-let totalLikes =  fbLikes.length !== 0 ? parseInt(fbLikes[fbLikes.length - 1][1], 0) : ""
   return (
     <Fragment>
-     {/* <PageBanner likes={totalLikes} posts={totalposts} /> */}
         <div className=" page-container">
-        <div class="ancle_dropdown dropdown">
-          <button id="seccions_botons" class=" btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Seleciona grupo de metricas
-          </button>
-          <ul class="dropdown-menu">
-          {FbAllData.map((item) => {
-                return (
-                  <li>
-                  <a
-                    ref={registerTrigger(item.name)}
-                    className="dropdown-item SectionsAncles"
-                    href={"#" + item.name}
-                  >
-                    {item.name}
-                  </a>
-                  </li>
-                );
-              })}
-           
-          </ul>
-        </div>
-         
-
          <div className="childContainer">
           <div className="row">
             {FbAllData.map((item) => {

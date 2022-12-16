@@ -1,11 +1,8 @@
 @import "./../ThemeColor.css";
 
 /* text editor*/
-.rs-picker-default .rs-picker-toggle.rs-btn {
-    padding-top: 7px;
-    padding-bottom: 7px;
-    width: 282px;
-    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+.monthPicker {
+    margin: 1em;
 }
 .rs-picker-daterange-panel {
     background-color: var(--App-color);
@@ -34,12 +31,21 @@
     display: inline-block;
     outline: none;
     text-align: center;
+    padding: 1.6em !important;
     cursor: pointer;
     width: 100% !important;
     color: white;
     border: 0px solid #e5e5ea;
-    background-color: transparent !important;
-    padding-left: 44px;
+    border-radius: 100em;
+}
+input.rs-picker-toggle-textbox {
+    font-size: 1.1em;
+    text-align: center;
+}
+.rs-picker-default .rs-picker-toggle:hover{
+    background-color: #edf2ff !important;
+    color: var(--Text-color);
+
 }
 button.rs-btn.rs-btn-link.rs-btn-sm {
     color: var(--Text-color);
@@ -82,13 +88,14 @@ span.rs-picker-toggle-clean.rs-btn-close{
     display: none ;
 }
 .rs-picker-menu {
-    border-radius: 0!important;
-    box-shadow: none;
+    border-radius: 20px;
+    box-shadow: 0px 1em 3em 0px #0000002e;
     padding-bottom: 2em !important;
     position: fixed;
-    background-color: var(--App-color);
     color: var(--Text-color);
-    width: 25%;
+    width: 30%;
+    z-index: 99999999999999;
+
 }
 .rs-picker-toolbar-right {
     float: inherit;
@@ -110,9 +117,7 @@ button.rs-btn.rs-btn-primary.rs-btn-sm {
     border-radius: 100em;
     font-size: 18px;
 }
-.MonthCalendar.MonthCalendar.rs-picker.rs-picker-daterange.rs-picker-default.rs-picker-toggle-wrapper.rs-picker-has-value.rs-picker-block {
-    opacity: 0;
-}
+
 .rs-picker-daterange-calendar-group {
     width: 100%;
     min-width: 100% !important;
@@ -127,8 +132,13 @@ button.rs-btn.rs-btn-primary.rs-btn-sm {
 .rs-picker-toolbar-ranges {
     padding-bottom: 0.5em;
 }
+.MonthCalendar:hover {
+    background-color: #edf2ff;
+    border-radius: 100em;
+}
 span.rs-picker-toggle-value {
-    color: white !important;
+    color: var(--Text-color) !important;
+    font-size: 18px;
 }
 svg.rs-picker-toggle-caret.rs-icon {
     display: none;
@@ -136,9 +146,7 @@ svg.rs-picker-toggle-caret.rs-icon {
 .rs-picker-toggle-active, .rs-picker.rs-picker-focused {
     box-shadow: none;
 }
-.MonthCalendar {
-    pointer-events: none;
-}
+
 button.rs-calendar-header-backward.rs-btn-icon, button.rs-calendar-header-forward {
     background-color: var(--button-color);
     border-radius: 100%;
@@ -158,7 +166,7 @@ button.rs-btn.rs-btn-primary.rs-btn-sm:hover {
     border-radius: 5px !important;
 }
 .rs-calendar-table-cell-in-range:before {
-    background-color: var(--App-color);
+    background-color: #ededff;
 }
 .rs-calendar-table-cell-content:hover {
     transform: scale(1.2);

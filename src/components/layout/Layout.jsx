@@ -4,7 +4,7 @@ import Sidebar from './SideBar'
 import '../../assets/styles/components/Layout.css';
 import Footer from './Footer';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
-import Header from '../movil/Header';
+import Header from '../Header';
 import BarBottom from '../movil/BarBottom';
 
 const Layout = ({children}) => {
@@ -29,6 +29,7 @@ const Layout = ({children}) => {
     }else{
       return (
         <div className='mainApp'>
+          <Header/>
          <div className='row'>
               <div className="col-2">
                  <Sidebar/>

@@ -3,13 +3,24 @@
 .sidebar {
   background-color: var(--App-color);
   color: white;
-  box-shadow: 0 0 24px 4px rgb(0 0 0 / 5%);
   height: 100vh;
   position: fixed;
   transition: transform 0.2s linear;
   width: 18%;
-  z-index: 9999;
+  z-index: 999999999;
   transition: width 0.2s linear;
+}
+.icon_red_outside {
+  padding: 1em 2.5em;
+  margin: 1em 0em;
+  border-radius: 100em;
+  color: black;
+}
+.icon_red_outside:hover {
+  background-color: #ededff;
+}
+.outSideMenu {
+  margin: 1em 1em;
 }
 .closeSidebar {
   width: 5%;
