@@ -67,9 +67,10 @@ img.RedesIcono-close {
     padding: 1.3em;
 }
 a.RedesLink:hover {
-    background-color:  var(--button-color-hover);
+    background-color: #edf2ff;
     transition-duration: 300ms;
 }
+
 a.menu-item:hover {
     background-color: #edf2ff;
     color: black;
@@ -111,9 +112,7 @@ a.RedesLink {
     margin-left: 1em;
     color: #7a7878;
 }
-a.RedesLink.active  {
-    background-color: red;
-} 
+
 .IconoCaret{
     float: right;
 }
