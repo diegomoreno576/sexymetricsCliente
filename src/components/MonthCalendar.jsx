@@ -9,6 +9,7 @@ import { startOfDay, endOfDay, addDays, subDays } from 'date-fns';
 import 'rsuite/dist/rsuite.min.css';
 import "../assets/styles/components/MonthCalendar.css";
 import { LayoutContext } from '../context/layoutContext';
+import { ImHome } from "react-icons/im";
 
 const MonthCalendar = () => {
   const [stateLayout, dispatchLayout] = useContext(LayoutContext);
@@ -66,7 +67,8 @@ const MonthCalendar = () => {
     // let curret_start_time = start_day + " " + meses[start_month - 1] + " " + start_year 
     // let curret_end_time = end_day + " " + meses[end_month - 1] + " " +  end_year
 
-     
+ 
+    
     return (
      <div>
       {/* <div className="monthpickerTime">
@@ -82,6 +84,8 @@ const MonthCalendar = () => {
         ranges={Ranges}
         format="dd-MM-yyyy" 
         value={value} 
+        character={" - "}
+        caretAs={"i"}
       // open={true}
         onChange={setValue} />
      </div>

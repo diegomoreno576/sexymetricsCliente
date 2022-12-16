@@ -20,7 +20,7 @@ const SelectorRedes = () => {
 
   const [state, dispatch] = useContext(LayoutContext);
   const [selected, setIsSelected] = useState({
-    Imagen: 'https://notecopies.app/wp-content/uploads/2022/06/DB_SM.png"', 
+    Imagen: <ImHome/>, 
     Texto: 'Inicio',
   });
 
