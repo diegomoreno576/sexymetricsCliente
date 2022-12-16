@@ -11,17 +11,19 @@ import { NavLink } from "react-router-dom";
 import { BsFillChatLeftDotsFill, BsCalendar2WeekFill } from "react-icons/bs";
 
 const routes = [
-      {
-        path: "/planificacion",
-        name: "Planificación",
-        icon: <BsCalendar2WeekFill/>,
-      },
-      {
-        path: "/chat",
-        name: "chat",
-        icon: <BsFillChatLeftDotsFill/>
-      },
+  {
+    path: "/planificacion",
+    name: "Planificación",
+    icon: <BsCalendar2WeekFill />,
+  },
+  {
+    path: "/chat",
+    name: "chat",
+    icon: <BsFillChatLeftDotsFill />,
+  },
 ];
+
+
 
 const Sidebar = () => {
   const [state, dispatch] = useContext(LayoutContext);
@@ -35,55 +37,54 @@ const Sidebar = () => {
     <>
       <div className="main-container">
         <div className={isOpen ? "sidebar" : "sidebar closeSidebar"}>
-         
-            <div className="sidebarElements">
-              <div className="HeaderSection">
-                <div className="sidebarName">
-                </div>
+          <div className="sidebarElements">
+            <div className="HeaderSection">
+              <div className="sidebarName"></div>
 
-                <div className="UltilsButtons">
-                  <DarkMode />
-                  <Logout />
-                </div>
+              <div className="UltilsButtons">
+                <DarkMode />
+                <Logout />
               </div>
-              <div className="logo">
-                <section className="MainTeam">
-                  <Team />
-                </section>
+            </div>
+            <div className="logo">
+              <section className="MainTeam">
+                <Team />
+              </section>
+              <div className="calendar_and_monthpicker_active">
                 <section className="MainRedes">
                   <SelectorRedes />
                 </section>
+                <div className="select_range_date_text">
+                  <p>Selecciona rango de fechas</p>
+                </div>
                 <div className="monthPicker">
-                <section className="mainCalendar">
-                  <MonthYearCalendar />
-                </section>
+                  <section className="mainCalendar">
+                    <MonthYearCalendar />
+                  </section>
+                </div>
               </div>
-                <section className="outSideMenu">
-   
-                    {routes.map((route, index) => {
-                        return (
-                          <div
-                        className="Redesitem">
-                        <NavLink
-                            to={route.path}
-                            key={index}
-                            className="RedesLink_outside"
-                            activeClassName="Redesactive"
-                          >
-                            <div className="icon_red_outside">
-                              {route.icon}
-                              <span className="RedesText">
-                                {route.name}
-                                </span>
-                                </div>
-                          </NavLink>
-                      </div>
-                        );
-                      })}
-                    </section>
-              </div>
-              
+            
+              <section className="outSideMenu">
+                {routes.map((route, index) => {
+                  return (
+                    <div className="Redesitem">
+                      <NavLink
+                        to={route.path}
+                        key={index}
+                        className="RedesLink_outside"
+                        activeClassName="Redesactive"
+                      >
+                        <div className="icon_red_outside">
+                          {route.icon}
+                          <span className="RedesText">{route.name}</span>
+                        </div>
+                      </NavLink>
+                    </div>
+                  );
+                })}
+              </section>
             </div>
+          </div>
         </div>
       </div>
     </>

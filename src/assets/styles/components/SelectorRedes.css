@@ -74,6 +74,19 @@ a.menu-item:hover {
     background-color: #edf2ff;
     color: black;
 }
+.select_range_date_text {
+    color: #424040;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    font-size: 0.75em;
+    text-align: center;
+}
+.calendar_and_monthpicker_active {
+    background-color: #edf2ff;
+    border-radius: 20px;
+    padding: 0.5em;
+    margin: 1em;
+}
 .Redesdropdown-btn {
     padding: 1em;
     cursor: pointer;
@@ -81,8 +94,11 @@ a.menu-item:hover {
     padding: 1em 2.5em;
     color: black;
 }
+.Redesdropdown-btn svg, .icon_red_outside svg{
+    font-size: 20px;
+}
 a.RedesLink {
-    padding: 1em;
+    padding: 1em 1.3em;
     display: block;
     margin-bottom: 0.5em;
     font-size: 22px;
@@ -93,8 +109,11 @@ a.RedesLink {
 .RedesText {
     font-size: 17px;
     margin-left: 1em;
-    color: var(--Text-color);
+    color: #7a7878;
 }
+a.RedesLink.active  {
+    background-color: red;
+} 
 .IconoCaret{
     float: right;
 }

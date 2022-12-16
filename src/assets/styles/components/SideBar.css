@@ -11,13 +11,13 @@
   transition: width 0.2s linear;
 }
 .icon_red_outside {
-  padding: 1em 2.1em;
+  padding: 1em 2.5em;
   margin: 1em 0em;
   border-radius: 100em;
-  color: black;
+  color: #7a7878;
 }
 .icon_red_outside:hover {
-  background-color: #ededff;
+  background-color: #edf2ff;
 }
 .outSideMenu {
   margin: 1em 0.5em;
@@ -107,7 +107,12 @@
     white-space: nowrap;
     font-size: 18px;
 }
-  
+a.RedesLink_outside.active .icon_red_outside, a.RedesLink_outside.active .RedesText{
+  color: black;
+}
+a.RedesLink_outside.active .icon_red_outside {
+  background-color: #edf2ff;
+}
   .menu {
     display: flex;
     color: white;

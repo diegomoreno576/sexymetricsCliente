@@ -140,8 +140,8 @@
     display: flex;
     gap: 1em;
 }
-.post_list.active_post{
-    box-shadow: 0px 1em 3em 0px #0000002e;
+.post_list.active_post {
+    box-shadow: 0px 1em 3em 0px #0e33e938;
 }
 .post_description_likes_number {
     font-size: 16px;
@@ -173,7 +173,7 @@
     color: white;
 }
 .table_current_post {
-    background-color: #edf0ff;
+    background-color: #edf2ff;
     padding: 10px;
     border-radius: 20px;
     margin: 0;

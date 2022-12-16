@@ -79,6 +79,7 @@ const SelectorRedes = () => {
     setIsComponentVisible
   } = useComponentVisible(false);
 
+
   if(state.changeLayout == true){
   return (
     <div ref={ref} className="selectorRedes">

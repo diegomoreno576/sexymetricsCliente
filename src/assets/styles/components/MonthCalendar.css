@@ -138,7 +138,7 @@ button.rs-btn.rs-btn-primary.rs-btn-sm {
 }
 span.rs-picker-toggle-value {
     color: var(--Text-color) !important;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .rs-picker-toggle-active, .rs-picker.rs-picker-focused {
