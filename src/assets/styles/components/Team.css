@@ -1,16 +1,12 @@
-.notecopiesLogoimg img{
-    width: 110px;
+.notecopiesLogoimg img {
+    width: 142px;
 }
-.notecopiesLogoimg{
-    display: flex;
-    justify-content: center;
-}
+
 .avatarImg img{
     width: 50px;
 }
 .TeamContainer {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 1.7em 1.5em;
 }
 .avatarItem {
     font-size: 13px;
@@ -29,6 +25,5 @@
 }
 .avatarList {
     display: flex;
-    justify-content: center;
     gap: 1em;
 }
