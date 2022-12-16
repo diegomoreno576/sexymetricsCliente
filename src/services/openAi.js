@@ -1,9 +1,10 @@
 export default async function openAi (prompt) {
+    console.log("ios",process.env.REACT_APP_IOAPI)
     const res = await fetch(`https://api.openai.com/v1/completions`, {
         method: 'POST',
         headers: {
             "content-Type": "application/json",
-            "Authorization": "Bearer  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"
+            "Authorization": process.env.REACT_APP_IOAPI
         },
 
         body: JSON.stringify({
