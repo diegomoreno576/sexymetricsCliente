@@ -1,13 +1,14 @@
 .DakmodeButton {
     background-color: white;
-    color: #333333;
-    font-size: 15px;
+    color: #424040;
+    font-size: 16px;
     border-radius: 100%;
     margin: 0;
     display: flex;
     border: 0;
     height: 28px;
-    width: 28px;
+    gap: 0.5em;
+    width: 100%;
     align-content: center;
     align-items: center;
 }

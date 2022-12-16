@@ -4,7 +4,7 @@ import '../assets/styles/components/Darkmode.css';
 import { LayoutContext } from "../context/layoutContext";
 import { setTheme } from "../actions";
 import { ThemeContext } from "../context";
-
+import { BsSunFill } from "react-icons/bs";
 
 const DarkMode = () => {
   const [darkMode, setDarkMode] = useDarkMode(false);
@@ -25,7 +25,8 @@ const DarkMode = () => {
 return(
   <div className="dark-mode-toggle">
   <button className="DakmodeButton" onClick={() => setDarkMode(!darkMode)}>
-  <i class="fa-solid fa-circle-half-stroke"></i>
+    <BsSunFill/>
+  Cambiar color
   </button>
 </div>
 )

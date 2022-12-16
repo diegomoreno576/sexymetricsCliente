@@ -38,14 +38,6 @@ const Sidebar = () => {
       <div className="main-container">
         <div className={isOpen ? "sidebar" : "sidebar closeSidebar"}>
           <div className="sidebarElements">
-            <div className="HeaderSection">
-              <div className="sidebarName"></div>
-
-              <div className="UltilsButtons">
-                <DarkMode />
-                <Logout />
-              </div>
-            </div>
             <div className="logo">
               <section className="MainTeam">
                 <Team />
@@ -85,6 +77,10 @@ const Sidebar = () => {
               </section>
             </div>
           </div>
+          <div className="UltilsButtons">
+                <DarkMode />
+                <Logout />
+              </div>
         </div>
       </div>
     </>

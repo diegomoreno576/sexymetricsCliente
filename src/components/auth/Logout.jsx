@@ -1,6 +1,7 @@
 import React,{useContext} from 'react'
 import useUser from '../../hooks/useUser';
 import { LayoutContext } from '../../context/layoutContext';
+import { FaPowerOff } from "react-icons/fa";
 
 const Logout = () => {
   const [state, dispatch] = useContext(LayoutContext);
@@ -10,13 +11,14 @@ const Logout = () => {
      e.preventDefault()
      logout()
      }
-     if(state.changeLayout == true){
+  
       return (
         <button className='LogoutButton' onClick={handleLogoutClick}>
-           <i class="fa-solid fa-power-off"></i>
+           <FaPowerOff/>
+           Cerrar sessión
         </button>
       )
-     }
+
 
 }
 

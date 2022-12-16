@@ -8,7 +8,10 @@
   transition: transform 0.2s linear;
   width: 18%;
   z-index: 999999999;
+  display: flex;
   transition: width 0.2s linear;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .icon_red_outside {
   padding: 1em 2.5em;
@@ -84,7 +87,9 @@
     flex-direction: column;
     gap: 5px;
   }
-
+  .UltilsButtons {
+    padding: 1.5em;
+}
   .link {
     display: flex;
     font-size: 22px;
@@ -100,9 +105,7 @@
     background: rgb(45, 51, 89);
     transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   }
-  .UltilsButtons {
-    display: flex;
-}
+
   .link_text {
     white-space: nowrap;
     font-size: 18px;

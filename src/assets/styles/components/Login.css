@@ -27,6 +27,14 @@
     justify-content: center;
     align-items: center;
 }
+.LogoutButton {
+    color: #424040;
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    gap: 0.5em;
+}
 .LoginText {
     color: white;
     font-size: 14px;
