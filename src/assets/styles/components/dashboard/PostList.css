@@ -14,7 +14,11 @@
     display: flex;
     align-items: center;
     gap: 4em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgb(222,222,222);
+}
+.col-post_list {
+    margin-top: 2em;
 }
 .header_post_description {
     margin-bottom: 2em;
@@ -46,13 +50,14 @@
     margin-top: 2em;
 }
 .list_buttos_in > span > i{
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 3px;
 }
 .list_buttos_in {
     gap: 0.5em;
     display: flex;
     align-items: center;
+    font-size: 0.9em;
 }
 .header_post_List_buttons {
     color: black;
@@ -76,7 +81,8 @@
     padding: 0em 2em;
 }
 .header_post_list_name {
-    font-size: 18px;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 .post_image {
     margin-top: -24px;

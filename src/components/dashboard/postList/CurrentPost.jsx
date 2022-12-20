@@ -76,57 +76,7 @@ const CurrentPost = (props) => {
             )
           }
            </div>
-           
-          {/* <div className="row table_current_post">
-          <div className="col-3 post_description_items">
-              <div className="post_description_item">
-                <span className="post_description_likes_title">Likes</span>
-                <span className="post_description_likes_number">15000</span>
-              </div>
-            </div>
-            <div className="col-3 post_description_items">
-            <div className="post_description_item">
-              <span className="post_description_likes_title">Comentrios</span>
-              <span className="post_description_likes_number">15000</span>
-            </div>
-          </div>
-          <div className="col-3 post_description_items">
-            <div className="post_description_item">
-              <span className="post_description_likes_title">Clicks</span>
-              <span className="post_description_likes_number">15000</span>
-            </div>
-          </div>
-          <div className="col-3 post_description_items">
-            <div className="post_description_item">
-              <span className="post_description_likes_title">Link</span>
-              <span className="post_description_likes_number">15000</span>
-            </div>
-          </div>
-          <div className="col-3 post_description_items">
-            <div className="post_description_item">
-              <span className="post_description_likes_title">Impresiones</span>
-              <span className="post_description_likes_number">15000</span>
-            </div>
-          </div>
-          <div className="col-3 post_description_items">
-            <div className="post_description_item">
-              <span className="post_description_likes_title">Alcance</span>
-              <span className="post_description_likes_number">15000</span>
-            </div>
-          </div>
-          <div className="col-3 post_description_items">
-            <div className="post_description_item">
-              <span className="post_description_likes_title">Reproducciones</span>
-              <span className="post_description_likes_number">15000</span>
-            </div>
-          </div>
-          <div className="col-3 post_description_items">
-            <div className="post_description_item">
-              <span className="post_description_likes_title">Puntuación</span>
-              <span className="post_description_likes_number">15000</span>
-            </div>
-          </div>
-          </div> */}
+       
         </div>
         {/* <div className="post_post_description">
           <span>{currentPost.text}</span>

@@ -42,7 +42,7 @@ const PostList = (props) => {
           </div>
         </div>
       </div>
-      {/* post list */}
+ 
       <div className="col-6 col-post_list">
         <div className="main_post_list">
           {props.data?.map((item) => {

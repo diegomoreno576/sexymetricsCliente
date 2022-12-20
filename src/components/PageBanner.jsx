@@ -88,16 +88,9 @@ const PageBanner = (props) => {
 <div className="container main_page_banner">
   <div className=" page_banner">
     <div className="row page_items">
-      <div className="col-12   page_main_avatar">
-        <div className="page_name_and_data">
-          <div className="page_name">
-            <span>{Avatar.facebook}</span>
-          </div>
-        </div>
-      </div>
       <div className="seccion_title">
       <div className="seccionTitle">
-              <span>{props.title} </span>
+              <span>Puntuación {props.title} </span>
             </div>
       </div>
       <div className="col-12 seccion_description">

@@ -20,6 +20,12 @@ const Team = () => {
       avatarName: "Diego",
       avatarEmployment: "Web",
     },
+    {
+      avatarImg:
+        "https://notecopies.app/wp-content/uploads/2022/01/DIEGO_baja.png",
+      avatarName: "Gladys",
+      avatarEmployment: "Diseño",
+    },
   ];
   if (stateLayout.changeLayout === true) {
     return (

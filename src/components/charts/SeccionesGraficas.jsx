@@ -18,15 +18,12 @@ const SeccionesGraficas = (props) => {
     <div ref={registerContainer}>
       <div ref={registerSection(props.name)} id={props.name}>
         <div className="row secciones-graficas-row">
-          <div className="SeccionTitle">
-           
-       
-          </div>
+
           <div className="row page_banner_dashboard">
             <div className="col-3">
               <PageBanner title={props.name} />
             </div>
-            <div className="col-9">
+            <div className="col-9 seccion_posts">
               <PostList
                data={props.postsList}
                 postListDetails={props.postListDetails} 
