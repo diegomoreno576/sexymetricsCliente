@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../context";
+import openAi from "../../../services/openAi";
 
 const CurrentPost = (props) => {
   const [state, dispatch] = useContext(ThemeContext);
@@ -16,44 +17,14 @@ const CurrentPost = (props) => {
      impresiones: ${currentPost?.impressions} 
      alcance: ${currentPost?.impressionsUnique},`;
 
-
-
-//open ai ask promt
-const openai = async (promp) => {
-  const response = await fetch(
-    "https://api.openai.com/v1/engines/davinci/completions",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": process.env.REACT_APP_IOAPI
-      },
-      body: JSON.stringify({
-        prompt: prompt,
-        max_tokens: 80,
-        temperature: 0.9,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0.6,
-        stop: ["\
-        "],
-      }),
-    }
-  );
-  const data = await response.json();
-  console.log(process.env.REACT_APP_IOAPI);
-  setsetmsgPost(data.choices[0].text);
-};
-
   useEffect(() => {
-    if (currentPost) {
-      openai();
+    //open ai peticion
+    openAi(prompt).then((res) => {
+      setsetmsgPost(res.data.choices[0].text);
     }
+    );
   }, [currentPost]);
-
-
-        
-
+  
 
 
   if (currentPost && props.data) {
