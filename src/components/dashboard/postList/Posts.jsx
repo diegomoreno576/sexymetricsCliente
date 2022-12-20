@@ -72,7 +72,7 @@ const PostList = (props) => {
         </div>
       </div>
       {/* post details */}
-      <div className="col-6">
+      <div className="col-6 current_post_col">
         <CurrentPost data={props.data} details={props.postListDetails} />
       </div>
       </div>
