@@ -65,10 +65,10 @@ const CurrentPost = (props) => {
           {
             Object.keys(details).map((item) => {
               return (
-                <div className="col-3 post_description_items">
+                <div className="col-2 post_description_items">
                   <div className="post_description_item">
+                  <span className="post_description_likes_number">{Math.round(details[item] * 100) / 100}</span>
                     <span className="post_description_likes_title">{item}</span>
-                    <span className="post_description_likes_number">{Math.round(details[item] * 100) / 100}</span>
                   </div>
                 </div>
               )

@@ -13,11 +13,7 @@
     margin-left: 5%;
     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
 }
-.Redesdropdown-btn:hover {
-    background-color: rgb(237 237 255);
-    color: black;
-    transition-duration: 300ms;
-}
+
 .Redesdropdown-content::-webkit-scrollbar{
     width: 7px;
   
@@ -38,10 +34,10 @@
   .Redesdropdown-content::-webkit-scrollbar-thumb:hover {
     background: rgb(14,48,168); 
   }
-.RedesTextButton{
-    color: var(--Text-color);
-    font-size: 17px;
+  .RedesTextButton {
+    font-size: 0.8em;
     margin-left: 1em;
+    color: rgb(187,187,187);
 }
 .Redesdropdown-btn:hover .RedesTextButton{
     color: black;
@@ -67,36 +63,36 @@ img.RedesIcono-close {
     padding: 1.3em;
 }
 a.RedesLink:hover {
-    background-color: #edf2ff;
+    background-color: rgb(221,233,242);
     transition-duration: 300ms;
 }
 
 a.menu-item:hover {
-    background-color: #edf2ff;
+    background-color: rgb(221,233,242);
     color: black;
 }
 .select_range_date_text {
-    color: #424040;
-    padding-bottom: 1em;
-    padding-top: 1em;
-    font-size: 0.75em;
-    text-align: center;
+    color: rgb(187,187,187);
+    font-size: 0.7em;
+    margin: 3em 0em 1.3em 2em;
+    text-align: initial;
 }
 .calendar_and_monthpicker_active {
-    background-color: #edf2ff;
+    background-color: rgb(221,233,242);
     border-radius: 20px;
-    padding: 0.5em;
+    padding: 2em 1em 1em 1em;
     margin: 1em;
 }
 .Redesdropdown-btn {
-    padding: 1em;
     cursor: pointer;
     border-radius: 100em;
-    padding: 1em 0.5em;
+    padding: 0.8em 1em;
     color: black;
+    background-color: white;
 }
-.Redesdropdown-btn svg, .icon_red_outside svg{
-    font-size: 20px;
+
+.Redesdropdown-btn svg, .icon_red_outside svg {
+    font-size: 1em;
 }
 a.RedesLink {
     padding: 1em 1.3em;
@@ -117,9 +113,6 @@ a.RedesLink {
     float: right;
 }
 
-.MainRedes {
-    margin: 0.5em;
-}
 
 @media only screen and (max-width: 425px){
 	.Redesdropdown-content {

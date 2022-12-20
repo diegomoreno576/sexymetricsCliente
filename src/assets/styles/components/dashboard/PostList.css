@@ -33,8 +33,10 @@
     margin-bottom: 2em;
 }
 .header_post_description {
-    margin-bottom: 3em;
+    margin-bottom: 1em;
+    padding: 1em;
     align-items: center;
+    background-color: rgb(221,233,242);
 }
 .col_post_description_date {
     font-size: 16px;
@@ -148,7 +150,7 @@
     font-weight: bold;
 }
 .post_description_likes_title {
-    font-size: 14px;
+    font-size: 0.8em;
     text-transform: capitalize;
 }
 .image_title {
@@ -167,16 +169,15 @@
 .post_description_items {
     margin-bottom: 0;
     padding: 1em;
+    background-color: rgb(221,233,242);
+    border-radius: 20px;
 }
 .current_post_link {
     margin-top: 2em;
     color: white;
 }
 .table_current_post {
-    background-color: #edf2ff;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 0;
+    gap: 0.5em;
 }
 .type_post_item {
     border-radius: 20px;

@@ -6,12 +6,20 @@
   height: 100vh;
   position: fixed;
   transition: transform 0.2s linear;
-  width: 18%;
+  width: 16%;
   z-index: 999999999;
   display: flex;
   transition: width 0.2s linear;
   flex-direction: column;
   justify-content: space-between;
+}
+.selec_red_text {
+  margin-bottom: 0.9em;
+}
+.select_red {
+  color: black;
+  font-size: 0.7em;
+  padding-left: 1.5em;
 }
 .icon_red_outside {
   padding: 1em 2.5em;

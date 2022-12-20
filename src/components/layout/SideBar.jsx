@@ -39,15 +39,19 @@ const Sidebar = () => {
         <div className={isOpen ? "sidebar" : "sidebar closeSidebar"}>
           <div className="sidebarElements">
             <div className="logo">
+ 
               <section className="MainTeam">
                 <Team />
               </section>
               <div className="calendar_and_monthpicker_active">
+               <div className="selec_red_text">
+               <span className="select_red">Selecciona red</span>
+               </div>
                 <section className="MainRedes">
                   <SelectorRedes />
                 </section>
                 <div className="select_range_date_text">
-                  <p>Selecciona rango de fechas</p>
+                  <span className="selec_range_dates">Selecciona rango de fechas</span>
                 </div>
                 <div className="monthPicker">
                   <section className="mainCalendar">

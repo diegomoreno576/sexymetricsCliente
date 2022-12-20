@@ -1,9 +1,7 @@
 @import "./../ThemeColor.css";
 
 /* text editor*/
-.monthPicker {
-    margin: 0.5em;
-}
+
 .rs-picker-daterange-panel {
     background-color: var(--App-color);
 }
@@ -30,20 +28,17 @@
     z-index: 5;
     display: inline-block;
     outline: none;
+    padding: 1em 1em !important;
     text-align: center;
-    padding: 1.2em !important;
     cursor: pointer;
     width: 100% !important;
-    color: white;
     border: 0px solid #e5e5ea;
     border-radius: 100em;
 }
 input.rs-picker-toggle-textbox {
-    font-size: 1.1em;
     text-align: center;
 }
 .rs-picker-default .rs-picker-toggle:hover {
-    background-color: #ededff !important;
     color: var(--Text-color);
 }
 button.rs-btn.rs-btn-link.rs-btn-sm {
@@ -138,7 +133,7 @@ button.rs-btn.rs-btn-primary.rs-btn-sm {
 }
 span.rs-picker-toggle-value {
     color: var(--Text-color) !important;
-    font-size: 17px;
+    font-size: 1em;
 }
 
 .rs-picker-toggle-active, .rs-picker.rs-picker-focused {
