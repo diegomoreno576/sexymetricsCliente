@@ -62,11 +62,17 @@ img.RedesIcono-close {
 .Redesdropdown {
     padding: 1.3em;
 }
-a.RedesLink:hover {
-    background-color: rgb(221,233,242);
-    transition-duration: 300ms;
+a.RedesLink:hover .RedesText{
+    color: black;
 }
-
+a.RedesLink:hover {
+    background-color: rgb(221 233 242);
+    transition-duration: 300ms;
+    color: black;
+}
+a.RedesLink.active{
+    display: none;
+}
 a.menu-item:hover {
     background-color: rgb(221,233,242);
     color: black;
@@ -74,40 +80,67 @@ a.menu-item:hover {
 .select_range_date_text {
     color: rgb(187,187,187);
     font-size: 0.7em;
-    margin: 3em 0em 1.3em 2em;
+    margin: 3em 0em 1.3em 1.2em;
     text-align: initial;
 }
 .calendar_and_monthpicker_active {
-    background-color: rgb(221,233,242);
     border-radius: 20px;
     padding: 2em 1em 1em 1em;
     margin: 1em;
+}
+.calendar_and_monthpicker_active:hover{
+    background-color: rgb(221,233,242);
+}
+.calendar_and_monthpicker_active.button_active {
+    background-color: rgb(221,233,242);
+}
+.calendar_and_monthpicker_active.button_active .select_red, 
+.calendar_and_monthpicker_active.button_active .select_range_date_text,
+.calendar_and_monthpicker_active.button_active #current_red > svg ,
+.calendar_and_monthpicker_active.button_active .RedesTextButton,
+.calendar_and_monthpicker_active.button_active .Redesdropdown-btn{
+    color: #000;
+}
+.calendar_and_monthpicker_active.button_active span.rs-picker-toggle-value{
+    color: #000 !important;
+}
+.calendar_and_monthpicker_active:hover .select_red, 
+.calendar_and_monthpicker_active:hover .select_range_date_text,
+.calendar_and_monthpicker_active:hover #current_red > svg ,
+.calendar_and_monthpicker_active:hover .RedesTextButton,
+.calendar_and_monthpicker_active:hover .Redesdropdown-btn{
+    color: #000;
+}
+.calendar_and_monthpicker_active:hover span.rs-picker-toggle-value{
+    color: #000 !important;
 }
 .Redesdropdown-btn {
     cursor: pointer;
     border-radius: 100em;
     padding: 0.8em 1em;
-    color: black;
+    color: rgb(187,187,187);
     background-color: white;
 }
 
-.Redesdropdown-btn svg, .icon_red_outside svg {
+.Redesdropdown-btn svg {
     font-size: 1em;
 }
 a.RedesLink {
     padding: 1em 1.3em;
     display: block;
     margin-bottom: 0.5em;
-    font-size: 22px;
-    color: var(--Text-color);
+    font-size: 0.8em;
+    line-height: 1;
     gap: 10px;
     border-radius: 100em;
+    color: rgb(187,187,187);
 }
 .RedesText {
-    font-size: 17px;
+    font-size: 14px;
     margin-left: 1em;
-    color: #7a7878;
+    color: rgb(187,187,187);
 }
+
 
 .IconoCaret{
     float: right;

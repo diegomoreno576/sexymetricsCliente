@@ -26,8 +26,7 @@ a.menu-item {
     padding: 1em;
     margin: 0.5em;
     color: black;
-    font-weight: bold;
     background-color: rgb(221,233,242);
-    font-size: 0.9em;
+    font-size: 1em;
     border-radius: 100em;
 }

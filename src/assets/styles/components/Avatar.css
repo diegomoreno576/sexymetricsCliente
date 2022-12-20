@@ -8,9 +8,10 @@
 .avatar img {
     width: 50px;
 }
+
 .AvatarName {
     color: var(--Text-color);
-    font-size: 1.7em;
+    font-size: 1.3em;
 }
 .avatarClose {
     margin: 0.4em 0em 0.4em 0em;

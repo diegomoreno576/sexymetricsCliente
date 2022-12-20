@@ -81,13 +81,14 @@ const MonthCalendar = () => {
        cleanable={false}
        container={document.querySelector(".sidebarElements")}
        block={true}
+       placement="rightEnd"
         ranges={Ranges}
         format="dd-MM-yyyy" 
         value={value} 
         character={" - "}
         caretAs={"i"}
-      // open={true}
-        onChange={setValue} />
+        onChange={setValue}
+        />
      </div>
     )
   }

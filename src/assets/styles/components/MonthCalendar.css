@@ -111,7 +111,9 @@ button.rs-btn.rs-btn-primary.rs-btn-sm {
     border-radius: 100em;
     font-size: 18px;
 }
-
+.rs-anim-fade.rs-anim-in.rs-picker-daterange-menu.rs-picker-menu.placement-right-end {
+    top: 20% !important;
+}
 .rs-picker-daterange-calendar-group {
     width: 100%;
     min-width: 100% !important;
@@ -132,8 +134,8 @@ button.rs-btn.rs-btn-primary.rs-btn-sm {
     border-radius: 100em;
 }
 span.rs-picker-toggle-value {
-    color: var(--Text-color) !important;
     font-size: 1em;
+    color: rgb(187,187,187) !important;
 }
 
 .rs-picker-toggle-active, .rs-picker.rs-picker-focused {

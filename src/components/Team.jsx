@@ -38,6 +38,7 @@ const Team = () => {
         </div>
         <div className="add_meet_container">
           <div className="add_meet_button">
+          <i class="fa-light fa-camera-web"></i>  
             <span>Convocar reunión</span>
           </div>
         </div>

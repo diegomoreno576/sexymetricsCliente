@@ -14,13 +14,10 @@ const Avatar = () => {
    return (
      <div className="mainAvatar">
        <div className="AvatarChild">
+       <div className="AvatarName">{Avatar.label}</div>
          <div className={state.changeLayout ? "avatar avatarOpen" : "avatar avatarClose" }>
            <img src={Avatar.picture} alt="" />
-         </div>
-         {/* {state.changeLayout == true && 
-          <div className="AvatarName">{Avatar.label}</div>
-         } */}
-        
+         </div>   
        </div>
      </div>
    );

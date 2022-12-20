@@ -84,11 +84,11 @@ const SelectorRedes = () => {
   return (
     <div ref={ref} className="selectorRedes">
       <div className="RedesMaindropdown">
-        <div
+        <div id="current_red"
           onClick={(e) => {
             setIsComponentVisible(!isComponentVisible);
           }}
-          className="Redesdropdown-btn"
+          className="Redesdropdown-btn "
         >
            {selected.Imagen}
             <span className="RedesTextButton">{selected.Texto}</span>

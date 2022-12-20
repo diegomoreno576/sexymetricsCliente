@@ -106,6 +106,7 @@ const updateAppStateRoom = (newRoom) => {
                                         roomData={currentRoom}
                                         updateApp={updateAppStateRoom}
                                     /> } exact />
+                                    {/* <Route path="*" component={NotFound} /> */}
           </Routes>
           </Layout>
         </BrowserRouter>

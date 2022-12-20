@@ -17,18 +17,22 @@
   margin-bottom: 0.9em;
 }
 .select_red {
-  color: black;
   font-size: 0.7em;
+  color: rgb(187,187,187);
   padding-left: 1.5em;
 }
 .icon_red_outside {
-  padding: 1em 2.5em;
+  padding: 1em 1.5em;
   margin: 1em 0em;
   border-radius: 100em;
-  color: #7a7878;
+  color: rgb(187,187,187);
 }
 .icon_red_outside:hover {
   background-color: #edf2ff;
+  color: #000;
+}
+.icon_red_outside:hover .RedesText{
+  color: #000;
 }
 .outSideMenu {
   margin: 1em 0.5em;

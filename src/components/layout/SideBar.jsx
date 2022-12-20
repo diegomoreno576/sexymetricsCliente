@@ -9,12 +9,20 @@ import { setchangeLayout } from "../../actions";
 import Team from "../Team";
 import { NavLink } from "react-router-dom";
 import { BsFillChatLeftDotsFill, BsCalendar2WeekFill } from "react-icons/bs";
+import { useLocation } from "react-router-dom";
+import { set } from "date-fns";
+
 
 const routes = [
   {
     path: "/planificacion",
     name: "Planificación",
     icon: <BsCalendar2WeekFill />,
+  },
+  {
+    path: "/documentos",
+    name: "Documentos",
+    icon: <BsFillChatLeftDotsFill />,
   },
   {
     path: "/chat",
@@ -26,12 +34,30 @@ const routes = [
 
 
 const Sidebar = () => {
+  const [activeRed, setAtiveRed] = useState(true);
   const [state, dispatch] = useContext(LayoutContext);
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
   useEffect(() => {
     dispatch(setchangeLayout(isOpen));
   }, [isOpen]);
+
+  const location = useLocation();
+
+  //swit pathname to change the sidebar
+  useEffect(() => {
+    if (location.pathname === "/planificacion") {
+      setAtiveRed(false);
+    } else if (location.pathname === "/documentos") {
+      setAtiveRed(false);
+    } else if (location.pathname === "/chat") {
+      setAtiveRed(false);
+     } else{
+      setAtiveRed(true);
+     }
+  }, [location]);
+  
+
 
   return (
     <>
@@ -43,7 +69,7 @@ const Sidebar = () => {
               <section className="MainTeam">
                 <Team />
               </section>
-              <div className="calendar_and_monthpicker_active">
+              <div className={activeRed ? "calendar_and_monthpicker_active button_active" : "calendar_and_monthpicker_active"}>
                <div className="selec_red_text">
                <span className="select_red">Selecciona red</span>
                </div>
