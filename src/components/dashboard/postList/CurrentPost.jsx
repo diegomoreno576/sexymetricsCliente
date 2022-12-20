@@ -19,7 +19,7 @@ const CurrentPost = (props) => {
 
 
 //open ai ask promt
-const openai = async () => {
+const openai = async (promp) => {
   const response = await fetch(
     "https://api.openai.com/v1/engines/davinci/completions",
     {
@@ -50,7 +50,7 @@ const openai = async () => {
     }
   }, [currentPost]);
 
-  
+
         
 
 
