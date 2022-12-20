@@ -86,7 +86,6 @@ contra la fecha  ${startPast} al ${endPast} con
   useEffect(() => {
     const getResponse = async () => {
       const response = await openAi(prompt);
-        console.log(response);
       setmsgPage(response.choices[0].text);
     };
     getResponse();

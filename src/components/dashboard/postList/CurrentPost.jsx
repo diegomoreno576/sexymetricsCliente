@@ -41,7 +41,7 @@ const openai = async (promp) => {
     }
   );
   const data = await response.json();
-  console.log(data);
+  console.log(process.env.REACT_APP_IOAPI);
   setsetmsgPost(data.choices[0].text);
 };
 
