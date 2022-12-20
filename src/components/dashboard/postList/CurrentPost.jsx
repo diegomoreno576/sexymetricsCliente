@@ -18,12 +18,11 @@ const CurrentPost = (props) => {
      alcance: ${currentPost?.impressionsUnique},`;
 
   useEffect(() => {
-    const getResponse = async () => {
-      const response = await openAi(prompt);
-
-      setsetmsgPost(response.choices[0].text);
-    };
-    getResponse();
+    //open ai peticion
+    openAi(prompt).then((res) => {
+      setsetmsgPost(res.data.choices[0].text);
+    }
+    );
   }, [currentPost]);
 
 
