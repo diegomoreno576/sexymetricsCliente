@@ -8,15 +8,14 @@ const CurrentPost = (props) => {
   const [setmsgPost, setsetmsgPost] = useState("");
 
 
-console.log(currentPost)
     let prompt = `Explícame, comenta con no mas de 80 palabras y puntúame de 0 a 3 
      los  resultados de este post de facebook que obtuvo los siguientes resultados: 
-     likes: ${currentPost.reactions}, 
-     comentarios: ${currentPost.comments},
-     compartidos: ${currentPost.shares}
-     link clicks: ${currentPost.linkclicks}
-     impresiones: ${currentPost.impressions} 
-     alcance: ${currentPost.impressionsUnique},`;
+     likes: ${currentPost?.reactions}, 
+     comentarios: ${currentPost?.comments},
+     compartidos: ${currentPost?.shares}
+     link clicks: ${currentPost?.linkclicks}
+     impresiones: ${currentPost?.impressions} 
+     alcance: ${currentPost?.impressionsUnique},`;
 
   useEffect(() => {
     const getResponse = async () => {
