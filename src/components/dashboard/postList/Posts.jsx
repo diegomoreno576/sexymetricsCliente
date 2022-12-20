@@ -17,6 +17,7 @@ const PostList = (props) => {
 
   return (
     <div className="row">
+      <div className="col-12 session_header_posts">
       <div className="main_header_posts">
         <div className="header_post_list_name">
           <span>Listado de publicaciones</span>
@@ -42,7 +43,9 @@ const PostList = (props) => {
           </div>
         </div>
       </div>
+      </div>
  
+      <div className="row">
       <div className="col-6 col-post_list">
         <div className="main_post_list">
           {props.data?.map((item) => {
@@ -71,6 +74,7 @@ const PostList = (props) => {
       {/* post details */}
       <div className="col-6">
         <CurrentPost data={props.data} details={props.postListDetails} />
+      </div>
       </div>
     </div>
   );

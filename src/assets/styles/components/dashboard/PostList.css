@@ -18,7 +18,11 @@
     border-bottom: 1px solid rgb(222,222,222);
 }
 .col-post_list {
-    margin-top: 2em;
+    padding: 2em 4em !important;
+}
+
+.session_header_posts {
+    padding: 1em 7em !important;
 }
 .header_post_description {
     margin-bottom: 2em;
@@ -78,7 +82,7 @@
 .main_post_list {
     height: 420px;
     overflow: auto;
-    padding: 0em 2em;
+    padding: 1em 2em;
 }
 .header_post_list_name {
     font-size: 1.1em;
