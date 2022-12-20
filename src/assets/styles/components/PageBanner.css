@@ -65,7 +65,17 @@
     height: 100%;
     object-fit: cover;
 }
-
+.score_page_starts i{
+    text-shadow: 0px 0.1em 0.01em rgb(255 255 255 / 32%);
+    font-size: 3.5em;
+    color: white;
+}
+.score_page {
+    text-align: center;
+}
+.score_page_starts i:nth-child(2){
+    font-size: 5em;
+}
 .page_name {
     color: #fff;
     font-size: 16px;

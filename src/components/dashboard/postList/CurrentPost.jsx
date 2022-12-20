@@ -1,9 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../context";
+import openAi from "../../../services/openAi";
 
 const CurrentPost = (props) => {
   const [state, dispatch] = useContext(ThemeContext);
   let currentPost = state.currentPost;
+  const [setmsgPost, setsetmsgPost] = useState("");
+
+
+console.log(currentPost)
+    let prompt = `Explícame, comenta con no mas de 80 palabras y puntúame de 0 a 3 
+     los  resultados de este post de facebook que obtuvo los siguientes resultados: 
+     likes: ${currentPost.reactions}, 
+     comentarios: ${currentPost.comments},
+     compartidos: ${currentPost.shares}
+     link clicks: ${currentPost.linkclicks}
+     impresiones: ${currentPost.impressions} 
+     alcance: ${currentPost.impressionsUnique},`;
+
+  useEffect(() => {
+    const getResponse = async () => {
+      const response = await openAi(prompt);
+
+      setsetmsgPost(response.choices[0].text);
+    };
+    getResponse();
+  }, [currentPost]);
+
 
   if (currentPost && props.data) {
     const event = new Date(currentPost.timestamp);
@@ -11,6 +34,8 @@ const CurrentPost = (props) => {
     const fecha = event.toLocaleDateString("es-ES", options);
 
     let details = props.details;
+
+
 
     return (
       <div className="main_post_list_description">
@@ -72,8 +97,10 @@ const CurrentPost = (props) => {
                   </div>
                   <div className="current_post_link">
                     <a href="#" target="_blank">
-                      Ver publicación
+                      <span> Ir a publicación</span>
+                      <i class="fa-light fa-share-from-square"></i>
                     </a>
+                    
                   </div>
                 </div>
                 <div className="col-4">
@@ -96,15 +123,7 @@ const CurrentPost = (props) => {
                   </div>
                   <div className="analisys_post_description">
                     <span>
-                      Este post de facebook fue muy exitoso, ya que obtuvo 10
-                      reacciones, 10 comentarios, 120 clicks y una gran cantidad
-                      de impresiones. Además, fue visto y alcanzado por 324572
-                      personas. El porcentaje de engagament fue también alto,
-                      78,9%, lo cual es muy bueno. Esto significa que los
-                      usuarios se sintieron interesados en el post y
-                      respondieron lo que se les pidió. Lo único que no obtuvo
-                      resultados fue el click en los links. En general, el post
-                      fue un éxito y mejoró la imagen de la marca.
+                         {setmsgPost}
                     </span>
                   </div>
                 </div>
@@ -129,7 +148,7 @@ const CurrentPost = (props) => {
           </div>
         </div>
       </div>
-      </div>
+      </div>  
     );
   }
 };

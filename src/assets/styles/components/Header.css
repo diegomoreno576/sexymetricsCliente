@@ -23,10 +23,10 @@
     background-color: white;
 }
 a.menu-item {
-    padding: 1em;
+    padding: 0.9em;
     margin: 0.5em;
     color: black;
     background-color: rgb(221,233,242);
-    font-size: 1em;
+    font-size: 0.9em;
     border-radius: 100em;
 }

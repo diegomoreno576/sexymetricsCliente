@@ -28,7 +28,7 @@
     text-align: center;
 }
 .btnIconPast {
-    font-size: 50px;
+    font-size: 1.3em;
 }
 .graficBtnName {
     text-align: initial;
@@ -59,7 +59,4 @@
 }
 #BtnIcon {
     font-size: 30px;
-}
-.MainGraficBtnName {
-    padding-left: 1em;
 }

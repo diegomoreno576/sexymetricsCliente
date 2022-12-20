@@ -192,7 +192,7 @@ const Facebook = () => {
       name: "Me gusta",
       group: "crecimiento",
       color: "#42a5f5",
-      icono: "fa-solid fa-thumbs-up",
+      icono: "fa-light fa-thumbs-up",
     },
     {
       data: useTimeLine(fbFollows),
@@ -203,7 +203,7 @@ const Facebook = () => {
       name: "Ganados",
       group: "crecimiento",
       color: "#4dd0e1",
-      icono: "fa-solid fa-arrow-up",
+      icono: "fa-light fa-arrow-up",
     },
     {
       data: useTimeLine(fbUnFollows),
@@ -214,7 +214,7 @@ const Facebook = () => {
       name: "Perdidos",
       group: "crecimiento",
       color: "#f06292",
-      icono: "fa-solid fa-arrow-down",
+      icono: "fa-light fa-arrow-down",
     },
     {
       data: useTimeLine(fbPost),
@@ -225,7 +225,7 @@ const Facebook = () => {
       name: "Posts",
       group: "crecimiento",
       color: "#fff176",
-      icono: "fa-solid fa-memo",
+      icono: "fa-light fa-memo",
     },
   ];
 
