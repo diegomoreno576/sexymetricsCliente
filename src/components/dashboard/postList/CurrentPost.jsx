@@ -128,6 +128,9 @@ const CurrentPost = (props) => {
 
                 {analizispostMsg === undefined ? (
                   analizispostLoading ? (
+                    <div className="main_analizis_post">
+                    <div className="analisys_post_text">
+                      <div className="analisys_post_description">
                     <ContentLoader viewBox="0 0 400 130" height={130} width={400} >
                     <rect x="0" y="0" rx="3" ry="3" width="250" height="10" />
                     <rect x="20" y="20" rx="3" ry="3" width="220" height="10" />
@@ -136,21 +139,32 @@ const CurrentPost = (props) => {
                     <rect x="20" y="80" rx="3" ry="3" width="200" height="10" />
                     <rect x="20" y="100" rx="3" ry="3" width="80" height="10" />
                   </ContentLoader>
+                  </div>
+                            </div>
+                            </div>
                   ) : (
                     <div className="main_analizis_post">
                       <div className="analisys_post">
                         <div className="analisys_post_description">
                           <span>
                             <div class="CurrentPostButton">
-                              <button
-                                className="analisys_post_name"
+                              <div className="analizis_button_icon">
+                              <i class="fa-light fa-user-robot"></i>
+                              </div>
+                              <div
+                                className="analizis_button"
                                 onClick={handleOnAnalizisPost}
                               >
-                                Analizar
-                              </button>
+                                <span>Analizar Post</span>
+                              </div>
                             </div>
                           </span>
                         </div>
+                        <div className="text_post_analizis_about">
+                              <span>
+                              Análisis de datos mediante Inteligencia artifical.
+                              </span>
+                            </div>
                       </div>
                     </div>
                   )

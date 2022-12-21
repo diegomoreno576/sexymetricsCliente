@@ -235,6 +235,19 @@
     font-weight: bold;
     text-transform: capitalize;
 }
+.analizis_button {
+    background-color: rgb(47,81,248);
+    padding: 0.3em 2em;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+.analizis_button_icon {
+    text-align: center;
+    margin-bottom: 1em;
+}
 .post_post_like {
     background-color: #dde9f2;
     padding: 0.5em;
@@ -249,6 +262,10 @@
     justify-content: center;
     align-items: center;
 }
+.analizis_button_icon i{
+    font-size: 2.5em;
+    color: black;
+}
 .analisys_post {
     border: 2px dashed rgb(187,187,187);
     border-radius: 20px;
@@ -257,6 +274,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 1em;
 }
 .main_analizis_post {
     padding: 1em 1em 0.3em 1em;
