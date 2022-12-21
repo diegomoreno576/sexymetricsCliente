@@ -4,15 +4,31 @@ import CurrentPost from "./CurrentPost";
 import PostLists from "./PostLists";
 import { ThemeContext } from "../../../context";
 import { setCurentPost } from "../../../actions";
-import {ReactComponent as PostIcon} from '../../../assets/img/post.svg'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { getPostList } from '../../../slices/analizisPost';
 
 const PostList = (props) => {
   const [state, dispatch] = useContext(ThemeContext);
-
+  let currentDates = useSelector((state) => state.currentDate, shallowEqual);
+  let postList = useSelector((state) => state.analizePost.post_list, shallowEqual);
+  const dispatchRedux = useDispatch();
+console.log(postList)
   useEffect(() => {
     dispatch(setCurentPost(props.data?.[0]));
 
   }, [props.data]);
+
+
+
+  useEffect(() => {
+    let params = {
+      api_url: "/stats/facebook/posts",
+      start: currentDates.TimeStart,
+      end: currentDates.TimeEnd,
+    }
+  
+    dispatchRedux(getPostList(params));
+  }, [currentDates.TimeStart, currentDates.TimeEnd]);
   
 
   return (
@@ -48,7 +64,7 @@ const PostList = (props) => {
       <div className="row">
       <div className="col-6 col-post_list">
         <div className="main_post_list">
-          {props.data?.map((item) => {
+          {postList?.map((item) => {
             const event = new Date(item.timestamp);
             const options = {
               weekday: "short",
@@ -65,7 +81,7 @@ const PostList = (props) => {
                 type={item.type}
                 text={item.text ? item.text : item.content}
                 Likes={item.reactions ? item.reactions : item.likes}
-                data={props.data}
+                data={postList}
               />
             );
           })}

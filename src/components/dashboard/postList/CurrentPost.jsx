@@ -1,14 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../context";
 import openAi from "../../../services/openAi";
+import ContentLoader from "react-content-loader";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import Spinner from "react-bootstrap/Spinner";
+import { analizePost } from "../../../slices/analizisPost";
 
 const CurrentPost = (props) => {
   const [state, dispatch] = useContext(ThemeContext);
   let currentPost = state.currentPost;
-  const [setmsgPost, setsetmsgPost] = useState("");
+  const dispatchRedux = useDispatch();
+  let analizispostMsg = useSelector(
+    (state) => state.analizePost.currentPost.analizis
+  );
+  let analizispostLoading = useSelector((state) => state.analizePost.loading);
+  let curretPostRedux = useSelector((state) => state.analizePost.currentPost);
 
-
-    let prompt = `Explícame, comenta con no mas de 80 palabras y puntúame de 0 a 3 
+  let prompt = `Explícame, comenta con no mas de 80 palabras y puntúame de 0 a 3 
      los  resultados de este post de facebook que obtuvo los siguientes resultados: 
      likes: ${currentPost?.reactions}, 
      comentarios: ${currentPost?.comments},
@@ -17,15 +25,19 @@ const CurrentPost = (props) => {
      impresiones: ${currentPost?.impressions} 
      alcance: ${currentPost?.impressionsUnique},`;
 
-  useEffect(() => {
-    const getResponse = async () => {
-      const response = await openAi(prompt);
+  // let prompt =
+  // `dame una  puntuacion de 0 a 3 con numeros enteros sobre
+  //  los  resultados de este post de facebook que obtuvo los siguientes datos:
+  //  likes: ${currentPost?.reactions},
+  //  comentarios: ${currentPost?.comments},
+  //  compartidos: ${currentPost?.shares}
+  //  link clicks: ${currentPost?.linkclicks}
+  //  impresiones: ${currentPost?.impressions}
+  //  alcance: ${currentPost?.impressionsUnique},`;
 
-      setsetmsgPost(response.choices[0].text);
-    };
-    getResponse();
-  }, [currentPost]);
-
+  function handleOnAnalizisPost() {
+    dispatchRedux(analizePost(prompt));
+  }
 
   if (currentPost && props.data) {
     const event = new Date(currentPost.timestamp);
@@ -33,8 +45,6 @@ const CurrentPost = (props) => {
     const fecha = event.toLocaleDateString("es-ES", options);
 
     let details = props.details;
-
-
 
     return (
       <div className="main_post_list_description">
@@ -99,7 +109,6 @@ const CurrentPost = (props) => {
                       <span> Ir a publicación</span>
                       <i class="fa-light fa-share-from-square"></i>
                     </a>
-                    
                   </div>
                 </div>
                 <div className="col-4">
@@ -116,38 +125,66 @@ const CurrentPost = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="analisys_post">
-                  <div className="analisys_post_name">
-                    <span>Análisis del post</span>
-                  </div>
-                  <div className="analisys_post_description">
-                    <span>
-                         {setmsgPost}
-                    </span>
-                  </div>
-                </div>
-              </div>
-           
-            <div className="row table_current_post">
-              {Object.keys(details).map((item) => {
-                return (
-                  <div className="col-2 post_description_items">
-                    <div className="post_description_item">
-                      <span className="post_description_likes_number">
-                        {Math.round(details[item] * 100) / 100}
-                      </span>
-                      <span className="post_description_likes_title">
-                        {item}
-                      </span>
+
+                {analizispostMsg === undefined ? (
+                  analizispostLoading ? (
+                    <ContentLoader viewBox="0 0 400 130" height={130} width={400} >
+                    <rect x="0" y="0" rx="3" ry="3" width="250" height="10" />
+                    <rect x="20" y="20" rx="3" ry="3" width="220" height="10" />
+                    <rect x="20" y="40" rx="3" ry="3" width="170" height="10" />
+                    <rect x="0" y="60" rx="3" ry="3" width="250" height="10" />
+                    <rect x="20" y="80" rx="3" ry="3" width="200" height="10" />
+                    <rect x="20" y="100" rx="3" ry="3" width="80" height="10" />
+                  </ContentLoader>
+                  ) : (
+                    <div className="main_analizis_post">
+                      <div className="analisys_post">
+                        <div className="analisys_post_description">
+                          <span>
+                            <div class="CurrentPostButton">
+                              <button
+                                className="analisys_post_name"
+                                onClick={handleOnAnalizisPost}
+                              >
+                                Analizar
+                              </button>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                ) : (
+                  <div className="main_analizis_post">
+                    <div className="analisys_post_text">
+                      <div className="analisys_post_description">
+                        <span>{analizispostMsg}</span>
+                      </div>
                     </div>
                   </div>
-                );
-              })}
+                )}
+              </div>
+
+              <div className="row table_current_post">
+                {Object.keys(details).map((item) => {
+                  return (
+                    <div className="col-2 post_description_items">
+                      <div className="post_description_item">
+                        <span className="post_description_likes_number">
+                          {Math.round(details[item] * 100) / 100}
+                        </span>
+                        <span className="post_description_likes_title">
+                          {item}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>  
     );
   }
 };

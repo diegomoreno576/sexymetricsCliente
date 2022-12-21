@@ -1,15 +1,25 @@
 import React, { useContext, useEffect } from "react";
 import { ThemeContext } from "../../../context";
 import { setCurentPost } from "../../../actions";
-import { ReactComponent as PostIcon } from "../../../assets/img/post.svg";
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { setPostAnalizis, setCurrentPost } from '../../../slices/analizisPost';
+
 
 const PostLists = (props) => {
+
+  let currentDates = useSelector((state) => state.currentDate, shallowEqual);
+  let postLists = useSelector((state) => state.analizePost.post_list, shallowEqual);
+  const dispatchRedux = useDispatch();
+
+
+  
   const [state, dispatch] = useContext(ThemeContext);
 
   //find de pos id onClick
   const findPost = () => {
-    const post = props.data.find((item) => item.postId === props.id);
+    const post = postLists.find((item) => item.postId === props.id);
     dispatch(setCurentPost(post));
+    dispatchRedux(setCurrentPost(post));
 
     //add active class to the post
     const postList = document.querySelectorAll(".post_list");
@@ -17,6 +27,11 @@ const PostLists = (props) => {
       item.classList.remove("active_post");
     });
     document.getElementById(`${props.id}`).classList.add("active_post");
+
+
+    //set null state setPostAnalizis  in redux
+    dispatchRedux(setPostAnalizis(null));
+    
   };
 
   //add active class to the first post useEffect
@@ -34,6 +49,10 @@ const PostLists = (props) => {
       ? props.text.substr(0, 40) + "..."
       : props.text.substr(0, 40) + "..."
     : "Sin descripción";
+
+
+
+    
 
   return (
     <div

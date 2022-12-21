@@ -242,6 +242,25 @@
     text-align: center;
     border-radius: 25px;
 }
+.analisys_post_text{
+    border-radius: 20px;
+    height: 16em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.analisys_post {
+    border: 2px dashed rgb(187,187,187);
+    border-radius: 20px;
+    background-color: #ffffff4d;
+    height: 16em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_analizis_post {
+    padding: 1em 1em 0.3em 1em;
+}
 .current_post_link a {
     color: #2800a8;
     font-size: 1em;
