@@ -135,7 +135,6 @@ function MixedGrafica(props) {
                 customTooltip.pointTime.push(date)
 
               }
-              console.log(w)
               dispatch(setTooltipData(customTooltip))
               },
               enabled: true,

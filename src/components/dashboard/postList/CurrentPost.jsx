@@ -22,7 +22,11 @@ const CurrentPost = (props) => {
   );
 
   let postScore = curretPostRedux.postScore ? curretPostRedux.postScore.trim() : "?"
-    console.log(postScore === "2")
+
+
+
+
+
 
   let prompt = `Explícame, comenta con no mas de 80 palabras
      los  resultados de este post de facebook que obtuvo los siguientes resultados: 
@@ -41,11 +45,15 @@ const CurrentPost = (props) => {
    link clicks: ${curretPostRedux?.linkclicks}
    impresiones: ${curretPostRedux?.impressions}
    alcance: ${curretPostRedux?.impressionsUnique},`;
-  
+
   function handleOnAnalizisPost() {
     dispatchRedux(analizePost(prompt));
     dispatchRedux(scorePost(prompt_puntuacion));
   }
+
+
+
+
 
   if (curretPostRedux && props.data) {
     const event = new Date(curretPostRedux.timestamp);
@@ -244,12 +252,12 @@ const CurrentPost = (props) => {
               </div>
 
               <div className="row table_current_post">
-                {Object.keys(details).map((item) => {
+                {Object.keys(curretPostRedux).map((item) => {
                   return (
                     <div className="col-2 post_description_items">
                       <div className="post_description_item">
                         <span className="post_description_likes_number">
-                          {Math.round(details[item] * 100) / 100}
+                          {Math.round(curretPostRedux[item] * 100) / 100}
                         </span>
                         <span className="post_description_likes_title">
                           {item}
