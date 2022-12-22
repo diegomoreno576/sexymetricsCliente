@@ -10,7 +10,14 @@ const PostLists = (props) => {
   let currentDates = useSelector((state) => state.currentDate, shallowEqual);
   let postLists = useSelector((state) => state.analizePost.post_list, shallowEqual);
   const dispatchRedux = useDispatch();
-
+  let analizispostLoading = useSelector(
+    (state) => state.analizePost.loadingAnalizis,
+    shallowEqual
+  );
+  let curretPostRedux = useSelector(
+    (state) => state.analizePost.currentPost,
+    shallowEqual
+  );
 
   
   const [state, dispatch] = useContext(ThemeContext);
@@ -34,6 +41,22 @@ const PostLists = (props) => {
     
   };
 
+
+  if(analizispostLoading === true){
+        const postList = document.querySelectorAll(".post_list");
+        postList.forEach((item) => {
+          // eslint-disable-next-line no-unused-expressions
+          curretPostRedux.postId !== item.id ? item.classList.add("analizando_post") : item.classList.remove("analizando_post")
+        });
+  }else{
+    const postList = document.querySelectorAll(".post_list");
+    postList.forEach((item) => {
+      item.classList.remove("analizando_post");
+    });
+  }
+
+
+
   //add active class to the first post useEffect
   useEffect(() => {
     if (props.id === props.data[0].postId) {
@@ -42,7 +65,7 @@ const PostLists = (props) => {
         first_post.classList.add("active_post");
       }
     }
-  }, [props.data]);
+  }, []);
 
   let text = props.text
     ? props.text.length < 40
@@ -59,7 +82,8 @@ const PostLists = (props) => {
       id={`${props.id}`}
       key={props.id}
       className="post_list"
-      onClick={findPost}
+      onClick={analizispostLoading ? null : findPost}
+
     >
       <div className="image_title">
         <div className="contain_post_image">

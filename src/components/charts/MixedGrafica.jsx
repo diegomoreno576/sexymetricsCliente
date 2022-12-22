@@ -2,8 +2,12 @@ import React from "react";
 import ApexCharts from "apexcharts";
 import Chart from "react-apexcharts";
 import "../../assets/styles/components/MixedGrafica.css";
+import { setTooltipData }  from '../../slices/customTooltip' 
+import { useDispatch } from "react-redux";
 
 function MixedGrafica(props) {
+  //
+  const dispatch = useDispatch();
 
   return (
     <div className="ChartsMixed">
@@ -31,6 +35,7 @@ function MixedGrafica(props) {
               },
             },
           },
+     
           stroke: {
             width: 5,
             curve: "smooth",
@@ -84,9 +89,6 @@ function MixedGrafica(props) {
                   color: "white",
                 },
               },
-              tooltip: {
-                enabled: true,
-              },
             },
             {
               seriesName: "Revenue",
@@ -112,35 +114,61 @@ function MixedGrafica(props) {
             },
           ],
           tooltip: {
-            enabled: true,
-            enabledOnSeries: undefined,
-            shared: true,
-            followCursor: true,
-            intersect: false,
-            inverseOrder: false,
-            custom: undefined,
-            theme: "dark",
-            fillSeriesColor: false,
-            style: {
-              fontSize: "12px",
-              fontFamily: undefined,
-            },
+            custom: function({seriesIndex, dataPointIndex, w}) {
 
-            x: {
-              show: true,
-              format: "dd MMM",
-              formatter: undefined,
-            },
-            y: {
-              formatter: undefined,
-              title: {
-                formatter: (seriesName) => seriesName,
+              let customTooltip = {
+               data: [],
+               name:[],
+              pointTime: [],
+              }
+             
+              for (var i = 0; i < w.globals.initialSeries.length; i++) {
+               var data = w.globals.initialSeries[i].data[dataPointIndex];
+               var name = w.globals.initialSeries[i].name;
+               var pointTime = w.globals.seriesX[0][dataPointIndex];
+               //new date
+                var date = new Date(pointTime);
+             
+
+                customTooltip.data.push(data)
+                customTooltip.name.push(name)
+                customTooltip.pointTime.push(date)
+
+              }
+              console.log(w)
+              dispatch(setTooltipData(customTooltip))
               },
-            },
-            z: {
-              formatter: undefined,
-              title: "Size: ",
-            },
+              enabled: true,
+              enabledOnSeries: undefined,
+              shared: true,
+              followCursor: true,
+              intersect: false,
+              inverseOrder: false,
+              theme: "dark",
+              fillSeriesColor: false,
+              style: {
+                fontSize: "12px",
+                fontFamily: undefined,
+              },
+  
+              x: {
+                show: true,
+                format: "dd MMM",
+                formatter: undefined,
+              },
+              y: {
+                formatter: undefined,
+                title: {
+                  formatter: (seriesName) => seriesName,
+                },
+              },
+              z: {
+                formatter: undefined,
+                title: "Size: ",
+              },
+
+            
+              
           },
           legend: {
             show: false,

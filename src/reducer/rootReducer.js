@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import analizePostSlice from '../slices/analizisPost';
 import currentDate from '../slices/currentDate';
+import customTooltip from '../slices/customTooltip';
 
 
 
@@ -8,7 +9,8 @@ import currentDate from '../slices/currentDate';
 const rootReducer = combineReducers({
     // Add your reducers here
     analizePost: analizePostSlice,
-    currentDate: currentDate
+    currentDate: currentDate,
+    customTooltip: customTooltip,
 
   
   });

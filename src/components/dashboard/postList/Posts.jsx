@@ -12,7 +12,9 @@ const PostList = (props) => {
   let currentDates = useSelector((state) => state.currentDate, shallowEqual);
   let postList = useSelector((state) => state.analizePost.post_list, shallowEqual);
   const dispatchRedux = useDispatch();
-console.log(postList)
+
+
+  
   useEffect(() => {
     dispatch(setCurentPost(props.data?.[0]));
 

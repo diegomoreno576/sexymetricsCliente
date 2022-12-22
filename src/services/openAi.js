@@ -18,6 +18,7 @@ export default async function openAi (prompt) {
             })
     })
     if (!res.ok)
+   
         throw new Error(res.statusText)
     const res_1 = await res.json()
     return res_1

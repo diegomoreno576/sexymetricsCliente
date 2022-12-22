@@ -113,7 +113,7 @@ function BotonGrafica(props) {
               theme: "dark",
             },
             stroke: {
-              width: props.type == "line" ? 5 : 0,
+              width: props.type === "line" ? 5 : 0,
               curve: "smooth",
               lineCap: "round",
             },
