@@ -20,3 +20,58 @@
     font-size: 16px;
     flex-direction: column;
 }
+
+/*hover on graficas*/
+.current_grafic_hover_header {
+    display: flex;
+    width: 100%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgb(222,222,222);
+    gap: 0.5em;
+}
+.grafic_on_hover_buttons {
+    width: 100%;
+}
+.curren_on_hover_posts_col.col-3 {
+    padding: 0px 8px;
+}
+
+.grafic_on_hover_current_time {
+    background-color: rgb(221,233,242);
+    padding: 1.2em;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    color: black;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.main_on_hover_posts {
+    background-color: #fbf8c2;
+    padding: 1em 1.4em;
+    border-radius: 20px;
+}
+.current_grafic_hover_item_img{
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.current_grafic_hover_item_img span{
+    background-color: #fbf8c2;
+    width: 100%;
+    margin: 0.8em 2em;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1.1em;
+}
+
+.main_seccions{
+    margin-top: 4em;
+}

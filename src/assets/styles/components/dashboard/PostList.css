@@ -16,6 +16,7 @@
     gap: 4em;
     padding-bottom: 1em;
     border-bottom: 1px solid rgb(222,222,222);
+    padding-left: 3em;
 }
 .col-post_list {
     padding: 0em 4em !important;
@@ -26,7 +27,7 @@
 }
 .session_header_posts {
     padding: 0em 7em !important;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .post_description_icon i{
@@ -37,10 +38,7 @@
     font-size: 1.1em;
     font-weight: bold;
 }
-.header_post_description {
-    margin-bottom: 2em;
-    border-radius: 20px;
-}
+
 .post_description_redes svg {
     width: 30px;
     height: 30px;
@@ -61,36 +59,13 @@
     margin-bottom: 1em;
     padding: 1em 0em;
     align-items: center;
-    background-color: rgb(221,233,242);
-}
-.score_post_name {
-    font-size: 1.1em;
-    color: white;
-    font-weight: bold;
-}
-.score_post_starts i{
-    font-size: 1.5em;
-    text-shadow: 0px 0.1em 0.01em rgb(151 91 4 / 74%);
-    color: white;
-    font-weight: bold;
-}
-.score_post_starts i:nth-child(2){
-    font-size: 2.5em;
-    margin-top: 0;
-}
-.score_post {
-    gap: 1em;
-    background-color: rgb(246,207,54);
-    box-shadow: 0.5em 0.5em 2em 0px rgb(251 210 138 / 80%);
-    background: linear-gradient(133deg,rgba(215,161,219,1) 0%,rgba(255,215,130,1) 100%);
-    padding: 2em 1em;
+    background-color: rgb(251,248,194);
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
 }
+.current_post_header_details{
+    padding-left: 3em;
+}
+
 .col_post_description_date {
     font-size: 16px;
     text-align: end;
@@ -110,13 +85,31 @@
 }
 .header_post_List_buttons {
     color: black;
-    padding: 0.5em 2em;
+    padding: 0.1em 0.6em;
     border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
 }
-.header_post_List_buttons:hover {
-    background-color: #edf2ff;
+.button_list_posts {
+    background-color: rgba(251,248,194,0.46);
+    cursor: pointer;
+}
+.button_list_posts:hover{
+    background-color: rgb(251,248,194);
+}
+.button_list_stories{
+    background-color: rgba(242,194,251,0.46);
+    cursor: pointer;
+}
+.button_list_stories:hover{
+    background-color: rgb(242,194,251);
+}
+.button_list_reels{
+    background-color: rgba(194,251,210,0.21);
+    cursor: pointer;
+}
+.button_list_reels:hover{
+    background-color: rgb(194,251,210);
 }
 .post_date {
     text-transform: capitalize;
@@ -125,7 +118,7 @@
     margin-bottom: 0.5em;
 }
 .main_post_list {
-    height: 500px;
+    height: 440px;
     overflow: auto;
     padding: 1em 2em;
 }
@@ -310,6 +303,9 @@
     display: flex;
     gap: 0.5em;
     align-items: center;
+}
+.current_post_link a:hover{
+    color: #2800a8;
 }
 .type_post_item {
     border-radius: 20px;

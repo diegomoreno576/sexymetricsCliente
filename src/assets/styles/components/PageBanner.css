@@ -1,12 +1,7 @@
 @import "./../ThemeColor.css";
 
 
-.page_banner_dashboard {
-    margin-bottom: 3em;
-}
-.page_banner_dashboard {
-    height: 560px;
-}
+
 .main_page_banner {
     border-radius: 20px;
   }
@@ -14,8 +9,31 @@
     background: rgb(238,174,202);
     background: linear-gradient(140deg,rgba(238,174,202,1) 0%,rgba(148,187,233,1) 100%);
     box-shadow: 1em 1em 5em 0px #98bae7;
-
-    padding: 1em;
+    padding: 0.5em 1em;
+}
+.days_to_review {
+    color: rgb(187,187,187);
+    font-size: 1.1em;
+    text-align: end;
+    margin-top: 1em;
+}
+.days_to_review:hover{
+    color: rgb(96,96,96);
+}
+.analizis_post_time {
+    margin-right: 0em;
+    margin-bottom: 0.5em;
+    padding-top: 0.2em;
+    padding-right: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.2em;
+    color: rgb(96,96,96);
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 100em;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 0.7em;
 }
 .seccion_description {
     font-size: 1.2em;
@@ -24,11 +42,12 @@
     color: white;
 }
 .seccionTitle {
-    text-shadow: 0px 1px 1px rgb(24 24 24);
     color: white;
     text-align: center;
-    padding: 1em 1em;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    text-shadow: 0px 1px 1px rgb(24 24 24);
+    line-height: 1.4;
+    font-weight: bold;
 }
 .page-banner {
     width: 100%;
@@ -36,7 +55,6 @@
 .page-container{
     z-index: 99999999;
     position: relative;
-    margin-top: 4em;
 }
 .page-banner-img-active img{
     width: 100%;
@@ -65,10 +83,13 @@
     height: 100%;
     object-fit: cover;
 }
-.score_page_starts i{
-    text-shadow: 0px 0.1em 0.01em rgb(255 255 255 / 32%);
+.score_page_starts i {
     font-size: 3.5em;
-    color: white;
+    text-shadow: 0px 0.1em 0.01em rgb(255 204 0);
+    color: rgb(255,236,0);
+}
+.main_score_page {
+    margin-bottom: 1.5em;
 }
 .score_page {
     text-align: center;

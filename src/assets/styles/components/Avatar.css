@@ -11,7 +11,8 @@
 
 .AvatarName {
     color: var(--Text-color);
-    font-size: 1.3em;
+    font-size: 1em;
+    font-weight: bold;
 }
 .avatarClose {
     margin: 0.4em 0em 0.4em 0em;

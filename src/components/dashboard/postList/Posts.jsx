@@ -19,21 +19,21 @@ const PostList = () => {
         <div className="header_post_list_name">
           <span>Listado de publicaciones</span>
         </div>
-        <div className="header_post_List_buttons">
+        <div className="header_post_List_buttons button_list_posts">
         <div className="list_buttos_in">
             <span> <i class="fa-light fa-square-plus"></i> </span>
              <span>Posts</span>
           </div>
           <span></span>
         </div>
-        <div className="header_post_List_buttons">
+        <div className="header_post_List_buttons button_list_stories">
           <div className="list_buttos_in">
             <span><i class="fa-light fa-circle-plus"></i></span>
              <span>Stories</span>
           </div>
           
         </div>
-        <div className="header_post_List_buttons">
+        <div className="header_post_List_buttons button_list_reels">
         <div className="list_buttos_in">
             <span><i class="fa-light fa-clapperboard-play"></i></span>
              <span>Reels</span>

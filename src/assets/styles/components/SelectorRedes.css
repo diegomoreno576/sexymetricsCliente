@@ -86,7 +86,8 @@ a.menu-item:hover {
 .calendar_and_monthpicker_active {
     border-radius: 20px;
     padding: 2em 1em 1em 1em;
-    margin: 1em;
+    margin: 0em 0em 0em 0.8em;
+
 }
 .calendar_and_monthpicker_active:hover{
     background-color: rgb(221,233,242);
@@ -136,7 +137,7 @@ a.RedesLink {
     color: rgb(187,187,187);
 }
 .RedesText {
-    font-size: 14px;
+    font-size: 13px;
     margin-left: 1em;
     color: rgb(187,187,187);
 }

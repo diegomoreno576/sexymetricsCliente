@@ -92,29 +92,38 @@ contra la fecha  ${startPast} al ${endPast} con
   }, [start, end]);
 
   return (
-    <div className="container main_page_banner">
-      <div className=" page_banner">
-        <div className="row page_items">
-          <div className="main_score_page">
-            <div className="score_page">
-              <span className="score_page_starts">
-                <i class="fa-light fa-star"></i>
-                <i class="fa-light fa-star"></i>
-                <i class="fa-light fa-star"></i>
-              </span>
+    <>
+      <div className="main_score_page">
+        <div className="score_page">
+          <span className="score_page_starts">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+        </div>
+      </div>
+
+      <div className="container main_page_banner">
+        <div className=" page_banner">
+          <div className="row page_items">
+            <div className="seccion_title">
+              <div className="seccionTitle">
+                <span>Análizis de {props.title} </span>
+              </div>
             </div>
-          </div>
-          <div className="seccion_title">
-            <div className="seccionTitle">
-              <span>Puntuación {props.title} </span>
+            <div className="analizis_post_time">
+              <span>15 Diciembre 2022</span>
             </div>
-          </div>
-          <div className="col-12 seccion_description">
-            <span>{msgPage}</span>
+            <div className="col-12 seccion_description">
+              <span>{msgPage}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="days_to_review">
+        <span>7 días para siguiente revisión</span>
+      </div>
+    </>
   );
 };
 

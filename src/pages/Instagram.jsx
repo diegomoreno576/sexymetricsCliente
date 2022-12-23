@@ -13,6 +13,8 @@ import { settings } from "../slicks/slickConfig";
 import useCount from "../hooks/useCount";
 import ChartEdad from "../components/charts/ChartEdad";
 import CitiesList from "../components/Lists/CitiesList";
+import { useDispatch } from "react-redux";
+import { getPostList } from "../slices/analizisPost";
 
 const Instagram = () => {
   const [state, dispatch] = useContext(ThemeContext);
@@ -21,6 +23,7 @@ const Instagram = () => {
   //Fecha pasada a la selecionada
   const startPast =  state.TimeStartPast
   const endPast =   state.TimeEndPast
+  const dispatchRedux = useDispatch();
 
 //Body
 const igBody = useData("/stats/aggregations/Instagram", start, end);
@@ -104,6 +107,15 @@ const igStoriesCountPast  = useData("/stats/timeline/igStoriesCount", startPast,
 
 
 
+  useEffect(() => {
+    let params = {
+      api_url: "/stats/instagram/posts",
+      start: start,
+      end: end ,
+    }
+  
+    dispatchRedux(getPostList(params));
+  }, [start, end ]);
 
   
 
