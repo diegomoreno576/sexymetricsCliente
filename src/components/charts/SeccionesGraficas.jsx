@@ -4,7 +4,7 @@ import "../../assets/styles/components/seccionesGraficas.css";
 import { useActiveMenu } from "react-active-menu";
 import PageBanner from "../PageBanner";
 import PostList from "../dashboard/postList/Posts";
-
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 const SeccionesGraficas = (props) => {
   const { registerContainer, registerSection } = useActiveMenu(
@@ -12,6 +12,10 @@ const SeccionesGraficas = (props) => {
       smooth: true,
     }
   );
+
+let current_list_posts = useSelector((state) => state.customTooltip.current_tooltip_posts, shallowEqual);
+   
+
 
   return (
     
@@ -24,14 +28,31 @@ const SeccionesGraficas = (props) => {
               <PageBanner title={props.name} />
             </div>
             <div className="col-9 seccion_posts">
-              <PostList
-               data={props.postsList}
-                postListDetails={props.postListDetails} 
-               />
+              <PostList/>
             </div>
           </div>
           <div className="row">
             <div className="col-4">
+
+             <div className="current_grafic_hover">
+              {
+                current_list_posts.map((post) => {
+                  return (
+                    <div className="current_grafic_hover_item">
+                      <img src={post.image
+                      } alt="post_image" />
+                      <div className="current_grafic_hover_item_text">
+                        <img src={post.picture} alt="" />
+                      </div>
+                    </div>
+                  )
+                })
+
+              }
+
+
+             </div>
+
             <div className="row">
             {props.data.map((items) => {
             return (

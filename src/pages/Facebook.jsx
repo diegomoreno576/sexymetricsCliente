@@ -15,6 +15,8 @@ import useCount from "../hooks/useCount";
 import ChartEdad from "../components/charts/ChartEdad";
 import CitiesList from "../components/Lists/CitiesList";
 import PageBanner from '../components/PageBanner';
+import { useDispatch } from "react-redux";
+import { getPostList } from "../slices/analizisPost";
 
 const Facebook = () => {
   const [state, dispatch] = useContext(ThemeContext);
@@ -23,8 +25,17 @@ const Facebook = () => {
   //Fecha pasada a la selecionada
   const startPast = state.TimeStartPast;
   const endPast = state.TimeEndPast;
+  const dispatchRedux = useDispatch();
 
-
+  useEffect(() => {
+    let params = {
+      api_url: "/stats/facebook/posts",
+      start: start,
+      end: end ,
+    }
+  
+    dispatchRedux(getPostList(params));
+  }, [start, end ]);
 
   //FbBody
   const fbbody = useData(`/stats/aggregations/Facebook`, start, end);
@@ -383,18 +394,6 @@ const Facebook = () => {
     },
   ];
 
-  let postListDetails = {
-    likes: !state.currentPost ? 0 : state.currentPost.reactions,
-   comentarios: !state.currentPost ? 0 : state.currentPost.comments,
-   compartidos: !state.currentPost ? 0 : state.currentPost.shares,
-   clicks: !state.currentPost ? 0 : state.currentPost.clicks,
-   links: !state.currentPost ? 0 : state.currentPost.linkclicks,
-   impresiones: !state.currentPost ? 0 : state.currentPost.impressions,
-   alcance: !state.currentPost ? 0 : state.currentPost.impressionsUnique,
-   reproducciones: !state.currentPost ? 0 : state.currentPost.videoViews,
-   gasto: !state.currentPost ? 0 : state.currentPost.spend,
-   engagement: !state.currentPost ? 0 : state.currentPost.engagement,
- }
 
   const FbAllData = [
     {
@@ -402,8 +401,6 @@ const Facebook = () => {
       data: FbDatosCrecimiento,
       name: "Crecimiento de la página",
       colors: ["#42a5f5", "#4dd0e1", "#f06292", "#fff176"],
-      postsList: fbListPublications,
-      postListDetails: postListDetails
     },
     {
       id: "Alcance de pagina",
@@ -428,9 +425,7 @@ const Facebook = () => {
     },
   ];
 
-  useEffect(() => {
-    dispatch(setFbDatos(FbAllData));
-  }, []);
+
 
 
   return (
@@ -446,8 +441,6 @@ const Facebook = () => {
                   timeLine={TimeLine}
                   name={item.name}
                   colors={item.colors}
-                  postsList={item.postsList}
-                  postListDetails={item.postListDetails}
 
                 />
               );

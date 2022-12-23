@@ -1,13 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { ThemeContext } from "../../../context";
-import { setCurentPost } from "../../../actions";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { setPostAnalizis, setCurrentPost } from '../../../slices/analizisPost';
 
 
 const PostLists = (props) => {
 
-  let currentDates = useSelector((state) => state.currentDate, shallowEqual);
   let postLists = useSelector((state) => state.analizePost.post_list, shallowEqual);
   const dispatchRedux = useDispatch();
   let analizispostLoading = useSelector(
@@ -19,15 +16,13 @@ const PostLists = (props) => {
     shallowEqual
   );
 
-  
-  const [state, dispatch] = useContext(ThemeContext);
+  console.log(postLists)
 
   //find de pos id onClick
   const findPost = () => {
     const post = postLists.find((item) => item.postId === props.id);
-    dispatch(setCurentPost(post));
     dispatchRedux(setCurrentPost(post));
-
+  
     //add active class to the post
     const postList = document.querySelectorAll(".post_list");
     postList.forEach((item) => {

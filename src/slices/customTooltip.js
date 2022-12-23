@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    tooltip_data: []
+    tooltip_data: [],
+    current_tooltip_posts: [],
 
 
 };
@@ -11,21 +12,21 @@ export const customTooltipSlice = createSlice({
     initialState,
     reducers: {
         setTooltipData: (state, action) => {
-            state.tooltip_data = action.payload
-        },
-        setTooltipName: (state, action) => {
-            state.tooltip_name = action.payload
-        },
-        setTooltipTime: (state, action) => {
-            state.tooltip_time = action.payload
-        },
+            state.tooltip_data = action.payload;
 
-    }
+        
+        },
+        setCurrentTooltipPosts: (state, action) => {
+            state.current_tooltip_posts = action.payload;
+        }
+
+    },
+ 
+
 })
 
 export const { setTooltipData } = customTooltipSlice.actions
-export const { setTooltipName } = customTooltipSlice.actions
-export const { setTooltipTime } = customTooltipSlice.actions
+export const { setCurrentTooltipPosts } = customTooltipSlice.actions
 
 export default customTooltipSlice.reducer
 

@@ -7,31 +7,10 @@ import { setCurentPost } from "../../../actions";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { getPostList } from '../../../slices/analizisPost';
 
-const PostList = (props) => {
-  const [state, dispatch] = useContext(ThemeContext);
-  let currentDates = useSelector((state) => state.currentDate, shallowEqual);
+const PostList = () => {
   let postList = useSelector((state) => state.analizePost.post_list, shallowEqual);
-  const dispatchRedux = useDispatch();
+ 
 
-
-  
-  useEffect(() => {
-    dispatch(setCurentPost(props.data?.[0]));
-
-  }, [props.data]);
-
-
-
-  useEffect(() => {
-    let params = {
-      api_url: "/stats/facebook/posts",
-      start: currentDates.TimeStart,
-      end: currentDates.TimeEnd,
-    }
-  
-    dispatchRedux(getPostList(params));
-  }, [currentDates.TimeStart, currentDates.TimeEnd]);
-  
 
   return (
     <div className="row">
@@ -91,7 +70,7 @@ const PostList = (props) => {
       </div>
       {/* post details */}
       <div className="col-6 current_post_col">
-        <CurrentPost data={props.data} details={props.postListDetails} />
+        <CurrentPost />
       </div>
       </div>
     </div>

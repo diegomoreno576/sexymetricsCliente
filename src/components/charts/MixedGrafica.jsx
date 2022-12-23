@@ -1,13 +1,21 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ApexCharts from "apexcharts";
 import Chart from "react-apexcharts";
 import "../../assets/styles/components/MixedGrafica.css";
-import { setTooltipData }  from '../../slices/customTooltip' 
-import { useDispatch } from "react-redux";
+import { setTooltipData, setCurrentTooltipPosts }  from '../../slices/customTooltip' 
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 
 function MixedGrafica(props) {
   //
   const dispatch = useDispatch();
+  const customTooltip = useSelector((state) => state.customTooltip.tooltip_data, shallowEqual);
+  const post_list = useSelector((state) => state.analizePost.post_list, shallowEqual);
+
+
+
+
+
+  
 
   return (
     <div className="ChartsMixed">
@@ -126,16 +134,31 @@ function MixedGrafica(props) {
                var data = w.globals.initialSeries[i].data[dataPointIndex];
                var name = w.globals.initialSeries[i].name;
                var pointTime = w.globals.seriesX[0][dataPointIndex];
-               //new date
-                var date = new Date(pointTime);
              
 
                 customTooltip.data.push(data)
                 customTooltip.name.push(name)
-                customTooltip.pointTime.push(date)
+                customTooltip.pointTime.push(pointTime)
 
               }
               dispatch(setTooltipData(customTooltip))
+
+              const event2 = new Date(customTooltip.pointTime[0]);
+              const options2 = { weekday: "short", month: "short", day: "numeric" };
+              const fecha2 = event2.toLocaleDateString("es-ES", options2);
+          
+            
+            const post_list_by_date = post_list.filter((post) => {
+              const post_date = new Date(post.created);
+              const options = { weekday: "short", month: "short", day: "numeric" };
+              const fecha = post_date.toLocaleDateString("es-ES", options);
+              
+              return fecha === fecha2;
+            });
+            
+           
+              dispatch(setCurrentTooltipPosts(post_list_by_date));
+          
               },
               enabled: true,
               enabledOnSeries: undefined,
